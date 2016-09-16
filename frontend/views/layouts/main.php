@@ -4,11 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -39,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="container">
         <div class="head">
             <div class=" logo">
-                <a href="index.html"><img src="/images/logo.png" alt=""></a>
+                <a href="<?=Url::home()?>"><img src="/images/logo.png" alt=""></a>
             </div>
         </div>
     </div>
