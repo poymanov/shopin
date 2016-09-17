@@ -5,7 +5,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts';
-
+$this->params['IsMain'] = true;
 ?>
 
 <div class="banner">

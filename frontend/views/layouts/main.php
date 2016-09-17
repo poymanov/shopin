@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav nav_1">
-                            <li><a class="color" href="index.html">Home</a></li>
+                            <li><a class="color" href="<?=Url::home()?>">Home</a></li>
 
                             <li class="dropdown mega-dropdown active">
                                 <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>
@@ -256,6 +256,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"></div>
         </div>
     </div>
+
+    <?php if(!isset($this->params['IsMain'])) {?>
+        <div class="banner-top">
+            <div class="container">
+                <h1>Products</h1>
+                <em></em>
+                <h2><a href="<?=Url::home()?>">Home</a><label>/</label>Products</a></h2>
+            </div>
+        </div>
+    <?php } ?>
+
 </div>
 <!--banner-->
 <?= $content ?>
@@ -264,7 +275,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="footer-middle">
         <div class="container">
             <div class="col-md-3 footer-middle-in">
-                <a href="index.html"><img src="/images/log.png" alt=""></a>
+                <a href="<?=Url::home()?>"><img src="/images/log.png" alt=""></a>
                 <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
             </div>
 
@@ -369,25 +380,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     });
 </script>
-<!--initiate accordion-->
-<script type="text/javascript">
-    $(function() {
-        var menu_ul = $('.menu-drop > li > ul'),
-            menu_a  = $('.menu-drop > li > a');
-        menu_ul.hide();
-        menu_a.click(function(e) {
-            e.preventDefault();
-            if(!$(this).hasClass('active')) {
-                menu_a.removeClass('active');
-                menu_ul.filter(':visible').slideUp('normal');
-                $(this).addClass('active').next().stop(true,true).slideDown('normal');
-            } else {
-                $(this).removeClass('active');
-                $(this).next().stop(true,true).slideUp('normal');
-            }
-        });
-    });
-</script>
+
 <script>
     $('.value-plus').on('click', function(){
         var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
