@@ -65,6 +65,8 @@ class ProductController extends Controller
     {
         $model = new Product();
 
+        $model->category = $this->getCategory($model);
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -81,6 +83,8 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+
+        $model->category = $this->getCategory($model);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -117,6 +121,15 @@ class ProductController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    // Получение категории для форм создания и обновления товара
+    protected function getCategory($model) {
+        if (Yii::$app->request->post('category')) {
+            return Yii::$app->request->post('category');
+        } else {
+            return $model->getMainCategoryId();
         }
     }
 }

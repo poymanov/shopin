@@ -35,8 +35,21 @@ class Product extends \yii\db\ActiveRecord
     {
         if (parent::beforeSave($insert)) {
             // Запись имени URL для ЧПУ
-            $this->slug = RUtils::translit()->slugify($this->name);
+
+            // Проверка уникальности записываемого ЧПУ
+
+            $slug = RUtils::translit()->slugify($this->name);
+
+            $model = Product::find()->where(['slug' => $slug])->all();
+
+            if ($model) {
+                $this->addError('slug', 'Dublicate slug - ' . $slug);
+                return false;
+            }
+
+            $this->slug = $slug;
             return true;
+
         } else {
             return false;
         }

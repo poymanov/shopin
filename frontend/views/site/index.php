@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts';
@@ -48,7 +50,7 @@ $this->title = 'Shopin A Ecommerce Category Flat Bootstrap Responsive Website Te
                                     <img src="/images/pc.jpg" class="img-responsive" alt="">
                                     <div class="zoom-icon ">
                                         <a class="picture" href="/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-                                        <a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+                                        <a href="<?=Url::to(['product/index', 'slug' => $product->slug])?>"><i class="glyphicon glyphicon-menu-right icon"></i></a>
                                     </div>
                                 </div>
                                 <div class="mid-1">

@@ -2,12 +2,19 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use Yii;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
 /* @var $form yii\widgets\ActiveForm */
 
-$model->category = $model->getMainCategoryId();
+//
+
+// Если форма загружается повторно при возникновении ошибок, получаем значение категории из ответа
+
+
+
+
 
 ?>
 
