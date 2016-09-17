@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\Product;
 
 /**
  * Site controller
@@ -72,7 +73,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        // Получение последних 8 товаров
+
+        $products = Product::find()->orderBy(['id' => 'desc'])->limit(8)->all();
+
+        return $this->render('index',[
+            'products' => $products
+        ]);
     }
 
     /**

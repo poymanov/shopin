@@ -2089,6 +2089,7 @@ label.line {
 }
 .item-grid {
     padding: 1em 0.3em 0;
+	margin-bottom: 30px;
 }
 .women-top {
     float: none;
@@ -2338,4 +2339,9 @@ td.add-check a {
     background-position-x: -225px;
     background-size: 542px;
 }
+}
+
+.item-header {
+	width: 190px;
+	min-height: 50px;
 }
