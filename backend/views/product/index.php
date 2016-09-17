@@ -23,7 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'slug',
+            [
+                'label' => 'Category',
+                'value' => function($item) {
+                    return $item->getMainCategoryName();
+                }
+            ],
             'price',
             'image',
             // 'preview_text:ntext',

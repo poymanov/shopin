@@ -30,6 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
+            [
+                'label' => 'Category',
+                'value' => $model->getMainCategoryName()
+            ],
             'slug',
             'price',
             'image',

@@ -54,7 +54,7 @@ $this->title = 'Shopin A Ecommerce Category Flat Bootstrap Responsive Website Te
                                 <div class="mid-1">
                                     <div class="women">
                                         <div class="women-top">
-                                            <span>Women</span>
+                                            <span><?=$product->getMainCategoryName()?></span>
                                             <h6 class="item-header"><a href="single.html"><?=$product->name?></a></h6>
                                         </div>
                                         <div class="img item_add">
