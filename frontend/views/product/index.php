@@ -66,7 +66,6 @@ $this->title = $product->name;
                 <nav class="nav-sidebar">
                     <ul class="nav tabs">
                         <li class="active"><a href="#tab1" data-toggle="tab">Product Description</a></li>
-                        <li class=""><a href="#tab2" data-toggle="tab">Additional Information</a></li>
                         <li class=""><a href="#tab3" data-toggle="tab">Reviews</a></li>
                     </ul>
                 </nav>
@@ -76,28 +75,7 @@ $this->title = $product->name;
                             <p>
                                 <?=Html::encode($product->full_description)?>
                             </p>
-                            <ul>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
-                            </ul>
                         </div>
-
-                    </div>
-                    <div class="tab-pane text-style" id="tab2">
-
-                        <div class="facts">
-                            <p > Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-                            <ul >
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Multimedia Systems</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Digital media adapters</li>
-                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Set top boxes for HDTV and IPTV Player  </li>
-                            </ul>
-                        </div>
-
                     </div>
                     <div class="tab-pane text-style" id="tab3">
 
