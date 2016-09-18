@@ -40,7 +40,7 @@ $this->title = $product->name;
                     </div>
                     <h4 class="quick">Quick Overview:</h4>
                     <p class="quick_desc">
-                        <?=Html::encode($product->preview_text)?>
+                        <?=nl2br(Html::encode($product->preview_text))?>
                     </p>
                     <div class="wish-list">
                         <ul>
@@ -73,7 +73,7 @@ $this->title = $product->name;
                     <div class="tab-pane active text-style" id="tab1">
                         <div class="facts">
                             <p>
-                                <?=Html::encode($product->full_description)?>
+                                <?=nl2br(Html::encode($product->full_description))?>
                             </p>
                         </div>
                     </div>
