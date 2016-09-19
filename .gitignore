@@ -31,3 +31,8 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+
+# img storages
+backend/web/storage
+frontend/web/storage
+

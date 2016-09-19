@@ -18,7 +18,8 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "andre_487/php_rutils": "^1.2"
+        "andre_487/php_rutils": "^1.2",
+        "yiisoft/yii2-imagine": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
