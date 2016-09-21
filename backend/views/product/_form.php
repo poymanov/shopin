@@ -2,19 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use Yii;
+use yii\widgets\ActiveField;
+
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
 /* @var $form yii\widgets\ActiveForm */
-
-//
-
-// Если форма загружается повторно при возникновении ошибок, получаем значение категории из ответа
-
-
-
-
 
 ?>
 
@@ -28,7 +21,23 @@ use Yii;
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'images[]')->fileInput(['multiple' => true]) ?>
+
+    <?php
+        // Вывод загруженных изображений
+        foreach ($model->productImages as $image) {
+
+            if ($image->main) {
+                $model->loadedImages = $image->id;
+            }
+            
+            echo "<div>";
+                echo $form->field($model, 'loadedImages')->radio(['value' => $image->id, 'uncheck' => null]);
+                echo Html::img(Yii::$app->urlManagerFrontend->baseUrl . $image->path);
+                echo $form->field($model, 'deleteImages[]')->checkbox(['value' => $image->id, 'uncheck' => null]);
+            echo "</div>";
+        }
+    ?>
 
     <?= $form->field($model, 'preview_text')->textarea(['rows' => 6]) ?>
 
