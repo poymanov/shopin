@@ -157,6 +157,8 @@ class BrandController extends Controller
         // будет получение ссылки на текущий сохранненый файл
         if ($model->id) {
             $currentModel = Brand::findOne($model->id);
+        } else {
+            $currentModel = null;
         }
 
         if ($model->save()) {
