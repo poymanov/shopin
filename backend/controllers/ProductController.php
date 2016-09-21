@@ -63,7 +63,7 @@ class ProductController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Product(['scenario' => 'create']);
+        $model = new Product();
 
         $model->category = $this->getCategory($model);
 

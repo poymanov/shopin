@@ -38,13 +38,22 @@ class Product extends \yii\db\ActiveRecord
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            // Запись имени URL для ЧПУ
+
+            // Запись имени URL для ЧПУ для нового товара
 
             // Проверка уникальности записываемого ЧПУ
 
             $slug = RUtils::translit()->slugify($this->name);
 
-            $model = Product::find()->where(['slug' => $slug])->all();
+            $model = Product::find()->where(['slug' => $slug]);
+            
+            // если происходит обновление товара, то не проверяем slug у текущего товара
+            
+            if (!$insert) {
+                $model = $model->andWhere(['not', ['id' => $this->id]]);
+            }
+
+            $model = $model->all();
 
             if ($model) {
                 $this->addError('slug', 'Dublicate slug - ' . $slug);
@@ -182,7 +191,6 @@ class Product extends \yii\db\ActiveRecord
             [['name', 'price'], 'string', 'max' => 255],
             ['category', 'integer'],
             [['preview_text', 'full_description', 'name', 'price', 'category'], 'required'],
-            ['images', 'required', 'on' => 'create'],
             [['images'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => '10'],
             [['loadedImages', 'deleteImages'], 'safe']
         ];
