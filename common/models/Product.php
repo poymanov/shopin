@@ -9,6 +9,10 @@ use common\models\Category;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
 use common\models\ProductImage;
+use yii\imagine\Image;
+use Imagine\Gd;
+use Imagine\Image\Box;
+use Imagine\Image\BoxInterface;
 
 /**
  * This is the model class for table "products".
@@ -26,6 +30,7 @@ class Product extends \yii\db\ActiveRecord
     public $images;
     public $loadedImages;
     public $deleteImages = [];
+    public $noImageProduct = '/storage/product-no-image.png';
 
     /**
      * @inheritdoc
@@ -86,13 +91,11 @@ class Product extends \yii\db\ActiveRecord
         // Сохранение изображений товара
         $images = UploadedFile::getInstances($this, 'images');
 
-
-//        print_r($this->loadedImages);
-//        exit;
-
         if ($images) {
 
-            $path = '/storage/products/';
+            $path = '/storage/products/' . $this->id . '/';
+
+            // Загружаем изображение в папку с id товара
             $dir = Yii::getAlias('@frontend/web' . $path);
             $this->createDirectory($dir);
 
@@ -114,7 +117,6 @@ class Product extends \yii\db\ActiveRecord
                 $productImage->product_id = $this->id;
                 $productImage->path = $path . $fileName;
                 $productImage->save();
-
             }
         }
 
@@ -164,16 +166,12 @@ class Product extends \yii\db\ActiveRecord
     {
         if (parent::beforeDelete()) {
 
-            $images = ProductImage::find()->where(['product_id' => $this->id])->all();
+            // Удаление папки с изображениями физически
 
-            // Удаление файлов изображений физически
-            foreach ($images as $image) {
-                $path = Yii::getAlias('@frontend/web' . $image->path);
+            $path = '/storage/products/' . $this->id . '/';
+            $dir = Yii::getAlias('@frontend/web' . $path);
 
-                if (file_exists($path)) {
-                    unlink($path);
-                }
-            }
+            $this->deleteDirectory($dir);
 
             return true;
         } else {
@@ -210,6 +208,7 @@ class Product extends \yii\db\ActiveRecord
             'category' => 'Category',
             'full_description' => 'Full Description',
             'images' => 'Images',
+            'loadedImages' => 'Main image'
         ];
     }
 
@@ -226,6 +225,36 @@ class Product extends \yii\db\ActiveRecord
     public function getMainCategory()
     {
         return ProductsCategories::find()->where(['product_id' => $this->id])->one();
+    }
+    
+    public function getMainImage()
+    {
+
+        $images = $this->productImages;
+//        print_r(count($images));
+//        exit;
+
+        $mainImage = '';
+
+        foreach ($images as $image) {
+            if ($image->main) {
+                return $image->path;
+            }
+        }
+
+        // Если главное изображение не найдено, то берем случайное изображение
+        $count = count($images);
+
+        // Если изображения существуют, берем первое попавшееся
+        if ($count) {
+            $randId = rand(0, $count-1);
+            return $images[$randId]->path;
+        } else {
+            // Если изображения нет, используем изображение-заглушку
+            return $this->noImageProduct;
+        }
+
+
     }
 
     public function getMainCategoryId()
@@ -266,5 +295,14 @@ class Product extends \yii\db\ActiveRecord
         if (!file_exists($path)) {
             mkdir($path, 0775, true);
         }
+    }
+
+    protected function deleteDirectory($dir) {
+        if ($objects = glob($dir."/*")) {
+            foreach($objects as $object) {
+                is_dir($object) ? $this->removeDirectory($object) : unlink($object);
+            }
+        }
+        rmdir($dir);
     }
 }

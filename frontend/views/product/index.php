@@ -15,15 +15,28 @@ $this->title = $product->name;
             <div class="col-md-5 grid">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li data-thumb="/images/si.jpg">
-                            <div class="thumb-image"> <img src="/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="/images/si1.jpg">
-                            <div class="thumb-image"> <img src="/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li data-thumb="/images/si2.jpg">
-                            <div class="thumb-image"> <img src="/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
+
+
+                        <?php if ($product->productImages) {?>
+
+                            <?php foreach ($product->productImages as $image) {?>
+                                <li data-thumb="<?=$image->path ?>">
+                                    <div class="thumb-image">
+                                        <img src="<?=$image->path ?>" data-imagezoom="true" class="img-responsive">
+                                    </div>
+                                </li>
+                            <?php } ?>
+
+                        <?php } else { ?>
+
+                            <li data-thumb="<?=$product->noImageProduct ?>">
+                                <div class="thumb-image">
+                                    <img src="<?=$product->noImageProduct ?>" class="img-responsive">
+                                </div>
+                            </li>
+
+                        <?php } ?>
+
                     </ul>
                 </div>
             </div>

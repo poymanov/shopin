@@ -47,9 +47,14 @@ $this->params['IsMain'] = true;
                         <div class="col-md-3 item-grid simpleCart_shelfItem">
                             <div class=" mid-pop">
                                 <div class="pro-img">
-                                    <img src="/images/pc.jpg" class="img-responsive" alt="">
+
+                                    <?php
+                                        $mainImage = $product->getMainImage();
+                                    ?>
+
+                                    <img src="<?=$mainImage?>" class="img-responsive" alt="<?=$product->name?>">
                                     <div class="zoom-icon ">
-                                        <a class="picture" href="/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+                                        <a class="picture" href="<?=$mainImage?>" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
                                         <a href="<?=Url::to(['product/index', 'slug' => $product->slug])?>"><i class="glyphicon glyphicon-menu-right icon"></i></a>
                                     </div>
                                 </div>
