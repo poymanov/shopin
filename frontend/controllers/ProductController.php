@@ -16,8 +16,11 @@ class ProductController extends Controller
 
         // Поиск товара по slug, иначе ошибка
 
-        $product = Product::find()->where(['slug' => $slug])->one();
+        $product = Product::find()->where(['slug' => $slug, 'status' => 1])->one();
 
+        /**
+         * Возвращаем 404 ошибку, если товар не существует или неактивен
+         */
         if (empty($product)) {
             throw new \yii\web\HttpException('404','Товар не существует');
             return;

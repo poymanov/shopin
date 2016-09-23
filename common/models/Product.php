@@ -189,6 +189,7 @@ class Product extends \yii\db\ActiveRecord
             [['name', 'price'], 'string', 'max' => 255],
             ['category', 'integer'],
             ['name', 'required'],
+            ['status', 'boolean'],
             [['images'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => '10'],
             [['loadedImages', 'deleteImages'], 'safe']
         ];

@@ -73,10 +73,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-        // Получение последних 8 товаров
-
-        $products = Product::find()->orderBy(['id' => 'desc'])->limit(8)->all();
+        /**
+         * Получение последних 8 активных товаров
+         */
+        $products = Product::find()->where(['status' => 1])->orderBy(['id' => 'desc'])->limit(8)->all();
 
         return $this->render('index',[
             'products' => $products
