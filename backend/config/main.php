@@ -43,6 +43,10 @@ return [
             'rules' => [
             ],
         ],
+        'cacheFrontend' => [
+            'class' => 'yii\caching\FileCache',
+            'cachePath' => '@frontend/runtime/cache'
+        ],
     ],
     'params' => $params,
 ];

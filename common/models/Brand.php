@@ -45,6 +45,21 @@ class Brand extends \yii\db\ActiveRecord
         return parent::beforeDelete();
     }
 
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+
+        // Обновление кэша для frontend-виджета
+        Yii::$app->cacheFrontend->delete('brands');
+    }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+
+        // Обновление кэша для frontend-виджета
+        Yii::$app->cacheFrontend->delete('brands');
+    }
+
     /**
      * @inheritdoc
      */
