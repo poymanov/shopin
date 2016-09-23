@@ -14,10 +14,9 @@ class m160916_192949_create_categories_table extends Migration
     {
         $this->createTable('categories', [
             'id' => $this->primaryKey(),
-            'name' => $this->string(),
-            'slug' => $this->string(),
+            'name' => $this->string()->notNull(),
+            'slug' => $this->string()->notNull(),
             'parent_id' => $this->string(),
-
         ]);
     }
 
@@ -27,5 +26,7 @@ class m160916_192949_create_categories_table extends Migration
     public function down()
     {
         $this->dropTable('categories');
+        
+        return true;
     }
 }

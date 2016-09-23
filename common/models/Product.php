@@ -188,7 +188,7 @@ class Product extends \yii\db\ActiveRecord
             [['preview_text', 'full_description'], 'string'],
             [['name', 'price'], 'string', 'max' => 255],
             ['category', 'integer'],
-            [['preview_text', 'full_description', 'name', 'price', 'category'], 'required'],
+            ['name', 'required'],
             [['images'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => '10'],
             [['loadedImages', 'deleteImages'], 'safe']
         ];

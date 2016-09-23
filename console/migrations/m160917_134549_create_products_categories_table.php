@@ -14,8 +14,8 @@ class m160917_134549_create_products_categories_table extends Migration
     {
         $this->createTable('products_categories', [
             'id' => $this->primaryKey(),
-            'product_id' => $this->integer(11),
-            'category_id' => $this->integer(11),
+            'product_id' => $this->integer(11)->notNull(),
+            'category_id' => $this->integer(11)->notNull(),
         ]);
 
         $this->addForeignKey('fk_products_products_categories', 'products_categories', 'product_id', 'products', 'id', 'CASCADE', 'CASCADE');
@@ -30,5 +30,7 @@ class m160917_134549_create_products_categories_table extends Migration
         $this->dropForeignKey('fk_products_products_categories', 'products_categories');
         $this->dropForeignKey('fk_categories_products_categories', 'products_categories');
         $this->dropTable('products_categories');
+        
+        return true;
     }
 }

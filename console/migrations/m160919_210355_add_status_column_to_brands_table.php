@@ -21,5 +21,7 @@ class m160919_210355_add_status_column_to_brands_table extends Migration
     public function down()
     {
         $this->dropColumn('brands', 'status');
+
+        return true;
     }
 }

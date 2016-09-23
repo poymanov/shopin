@@ -33,6 +33,7 @@ class ProductsCategories extends \yii\db\ActiveRecord
     {
         return [
             [['product_id', 'category_id'], 'integer'],
+            [['product_id', 'category_id'], 'required'],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];

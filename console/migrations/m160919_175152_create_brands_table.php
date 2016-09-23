@@ -29,5 +29,7 @@ class m160919_175152_create_brands_table extends Migration
     public function down()
     {
         $this->dropTable('brands');
+        
+        return true;
     }
 }

@@ -32,6 +32,7 @@ class m160920_175732_create_products_images_table extends Migration
     {
         $this->dropForeignKey('fk_products_images_products', 'products_images');
         $this->dropTable('products_images');
+        
         return true;
     }
 }

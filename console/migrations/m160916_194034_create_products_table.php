@@ -14,8 +14,8 @@ class m160916_194034_create_products_table extends Migration
     {
         $this->createTable('products', [
             'id' => $this->primaryKey(),
-            'name' => $this->string(),
-            'slug' => $this->string(),
+            'name' => $this->string()->notNull(),
+            'slug' => $this->string()->notNull(),
             'price' => $this->string(),
             'image' => $this->string(),
             'preview_text' => $this->text(),
@@ -29,5 +29,7 @@ class m160916_194034_create_products_table extends Migration
     public function down()
     {
         $this->dropTable('products');
+        
+        return true;
     }
 }
