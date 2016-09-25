@@ -43,6 +43,12 @@ use yii\widgets\ActiveField;
 
     <?= $form->field($model, 'category')->dropDownList($model->getCategoriesDropDown(), $model->getCategoriesDropDownParams()) ?>
 
+    <?= $form->field($model, 'discount_id')->dropDownList($model->getDiscountsList(), ['prompt' => 'Select discount group']) ?>
+
+    <?= $form->field($model, 'type_id')->dropDownList($model->getTypesList(), ['prompt' => 'Select type group']) ?>
+
+    <?= $form->field($model, 'brand_id')->dropDownList($model->getBrandsList(), ['prompt' => 'Select brand group']) ?>
+
     <?= $form->field($model, 'status')->checkbox(['label' => 'Active'])?>
 
     <?= $form->field($model, 'full_description')->textarea(['rows' => 6]) ?>

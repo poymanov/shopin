@@ -190,6 +190,7 @@ class Product extends \yii\db\ActiveRecord
             ['category', 'integer'],
             ['name', 'required'],
             ['status', 'boolean'],
+            [['discount_id', 'type_id', 'brand_id'], 'integer'],
             [['images'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => '10'],
             [['loadedImages', 'deleteImages'], 'safe']
         ];
@@ -209,7 +210,10 @@ class Product extends \yii\db\ActiveRecord
             'category' => 'Category',
             'full_description' => 'Full Description',
             'images' => 'Images',
-            'loadedImages' => 'Main image'
+            'loadedImages' => 'Main image',
+            'discount_id' => 'Discount Group',
+            'type_id' => 'Type Group',
+            'brand_id' => 'Brand Group'
         ];
     }
 
@@ -301,9 +305,39 @@ class Product extends \yii\db\ActiveRecord
     protected function deleteDirectory($dir) {
         if ($objects = glob($dir."/*")) {
             foreach($objects as $object) {
-                is_dir($object) ? $this->removeDirectory($object) : unlink($object);
+                is_dir($object) ? $this->deleteDirectory($object) : unlink($object);
             }
         }
         rmdir($dir);
+    }
+
+    public function getDiscountsList() {
+        $discounts = ProductDiscount::find()->all();
+        return ArrayHelper::map($discounts, 'id', 'name');
+    }
+
+    public function getTypesList() {
+        $types = ProductType::find()->all();
+        return ArrayHelper::map($types, 'id', 'name');
+    }
+
+    public function getBrandsList() {
+        $brands = ProductBrand::find()->all();
+        return ArrayHelper::map($brands, 'id', 'name');
+    }
+
+    public function getDiscount()
+    {
+        return $this->hasOne(ProductDiscount::className(), ['id' => 'discount_id']);
+    }
+
+    public function getType()
+    {
+        return $this->hasOne(ProductType::className(), ['id' => 'type_id']);
+    }
+
+    public function getBrand()
+    {
+        return $this->hasOne(ProductBrand::className(), ['id' => 'brand_id']);
     }
 }
