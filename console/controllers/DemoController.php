@@ -42,50 +42,25 @@ class DemoController extends Controller
         // Путь к изображениям для записи в БД
         $savePath = $paths['savePath'];
 
-        if (!file_exists($path)) {
-            echo "\n Can't find brand demo file. Check app/demo/brands/brands.csv.\n";
+
+        // Получение файла с демо данными
+        $brands = $this->getDemoDataFile('brands', $path);
+
+        if ($brands == false) {
             exit(0);
         }
-
-        if (($brands = fopen($path, "r")) === FALSE) {
-            echo "\n  Can't load brand demo data.\n";
-            exit(0);
-        }
-
-        // Массив для временной записи брендов
-        $arrBrands = [];
-
+        
         // Номер строки, с которой надо начинать обход
         $row = 1;
 
-        // Счетчик строк перебора файла
-        $i = 0;
+        // Схема для получения массива данных
+        $dataScheme = [
+            'name', 'href', 'file', 'status', 'alt', 'title', 'sort'
+        ];
 
-        // Обход всех строк файла
-        while (($data = fgetcsv($brands, ";")) !== FALSE) {
-
-            if ($i < $row) {
-                $i++;
-                continue;
-            }
-
-            $i++;
-
-            // Получение массива из строки файла
-            $arr = explode(';', $data[0]);
-
-            // Запись строки в массив брендов
-            $arrBrands[] = [
-                'name'      => $arr[0],
-                'href'      => $arr[1],
-                'file'      => $arr[2],
-                'status'    => $arr[3],
-                'alt'       => $arr[4],
-                'title'     => $arr[5],
-                'sort'      => $arr[6],
-            ];
-        }
-
+        // Массив для временной записи брендов
+        $arrBrands = $this->getDemoDataArray($brands, $dataScheme, $row);
+    
         // Если в массиве есть данные, то очищаем текущую таблицу брендов и записываем новые
         if (count($arrBrands) == 0) {
             echo "Can't load brands data from file. Empty." . PHP_EOL;
@@ -138,7 +113,7 @@ class DemoController extends Controller
             // Поле сортировки должно быть цифровым значением
             // если оно заполнено
             if (!empty($brand['sort']) && 
-                $this->validateData($brand['sort'], 'Sort', 'isDigit')) {
+                !$this->validateData($brand['sort'], 'Sort', 'isDigit')) {
                 continue;
             }
 
@@ -242,5 +217,57 @@ class DemoController extends Controller
             'fileExists' => 'file must be exist! Skip data',
             'isDigit' => 'field value must be a digit! Skip data.'
         ];
+    }
+
+    /**
+    * Функция получает файл с демо данными
+    * или возвращает ошибку, если такой файл не найден
+    */
+    protected function getDemoDataFile($data, $path)
+    {
+        if (!file_exists($path)) {
+            echo "\n Can't find brand demo file. Check app/demo/" . $data . "/" . $data . ".csv.\n";
+            return false;
+        }
+
+        if (($brands = fopen($path, "r")) === false) {
+            echo "\n  Can't load " . $data . " demo data.\n";
+            return false;
+        }
+
+        return $brands;
+    }
+
+    /**
+    * Функция обходит файл с демо данными
+    * и формирует массив согласно схеме
+    */
+    protected function getDemoDataArray($dataDemo, $scheme, $row)
+    {
+        $arrData = [];
+
+        // Счетчик строк перебора файла
+        $i = 0;
+
+        // Получение массива демо данных согласно схеме
+        while (($data = fgetcsv($dataDemo, ";")) !== false) {
+
+            if ($i < $row) {
+                $i++;
+                continue;
+            }
+
+            $i++;
+
+            // Получение массива из строки файла
+            $arr = explode(';', $data[0]);
+
+            // Запись строки в массив брендов
+            foreach ($scheme as $key => $value) {
+                $arrData[$i][$value] = $arr[$key];
+            }
+        }
+
+        return $arrData;
     }
 }
