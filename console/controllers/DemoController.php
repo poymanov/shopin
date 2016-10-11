@@ -24,20 +24,23 @@ class DemoController extends Controller
         $this->loadBrands();
     }
 
-    protected function loadBrands() {
+    protected function loadBrands() 
+    {
         echo "\n Load brands data.\n";
 
+        $paths = $this->initPath('brands');
+
         // Получение CSV файла с данными
-        $path = Yii::getAlias('@root') . '/demo/brands/brands.csv';
+        $path = $paths['path'];
 
         // Папка с изображениями для брендов
-        $imagesPath = Yii::getAlias('@root/demo/brands/images/');
+        $imagesPath = $paths['imagesPath'];
 
         // Папка куда будут скопированы изображения с брендами
-        $storagePath = Yii::getAlias('@frontend/web/storage/brands/');
+        $storagePath = $paths['storagePath'];
 
         // Путь к изображениям для записи в БД
-        $savePath = '/storage/brands/';
+        $savePath = $paths['savePath'];
 
         if (!file_exists($path)) {
             echo "\n Can't find brand demo file. Check app/demo/brands/brands.csv.\n";
@@ -107,26 +110,22 @@ class DemoController extends Controller
             // Проверки перед записью
 
             // Наименование бренда должно быть заполнено
-            if (empty($brand['name'])) {
-                echo 'Name value must be filled! Skip data.' . PHP_EOL;
+            if (!$this->validateData($brand['name'], 'Name', 'empty')) {
                 continue;
             }
 
-            // Поля изображения должно содержать в себе значение
-            if (empty($brand['file'])) {
-                echo 'File path value must be filled! Skip data.' . PHP_EOL;
+            // Поле изображения должно содержать в себе значение
+            if (!$this->validateData($brand['file'], 'File', 'empty')) {
                 continue;
             }
             
             // Изображение должно физически существовать в структуре проекта
-            if (!file_exists($imagesPath . $brand['file'])) {
-                echo 'Image file must be exist! Skip data.' . PHP_EOL;
+            if (!$this->validateData($imagesPath . $brand['file'], 'Image', 'fileExists')) {
                 continue;
             }
-        
+           
             // Поле активности должно быть цифровым значением
-            if (!ctype_digit($brand['status'])) {
-                echo 'Active field value must be a digit! Skip data.' . PHP_EOL;
+            if (!$this->validateData($brand['status'], 'Active', 'isDigit')) {
                 continue;
             }
 
@@ -138,8 +137,8 @@ class DemoController extends Controller
 
             // Поле сортировки должно быть цифровым значением
             // если оно заполнено
-            if (!empty($brand['sort']) && !ctype_digit($brand['sort'])) {
-                echo 'Sort value must be a digit! Skip data.' . PHP_EOL;
+            if (!empty($brand['sort']) && 
+                $this->validateData($brand['sort'], 'Sort', 'isDigit')) {
                 continue;
             }
 
@@ -164,18 +163,84 @@ class DemoController extends Controller
         }
     }
 
-    protected function createDirectory($path) {
+    protected function loadCategories() 
+    {
+        echo "\n Load categories data.\n";
+    }
+
+    protected function createDirectory($path) 
+    {
         if (!file_exists($path)) {
             mkdir($path, 0775, true);
         }
     }
 
-    protected function deleteDirectory($dir) {
+    /**
+    * Функция определяет 
+    * необходимые для загрузки тестовых данных пути
+    */
+    protected function initPath($data)
+    {
+        $paths = [
+            'path' => Yii::getAlias('@root') . '/demo/' . $data . '/' . $data . '.csv', // CSV файл с данными            
+            'imagesPath' => Yii::getAlias('@root/demo/' . $data . '/images/'), // Папка с изображениями для данных
+            'storagePath' => Yii::getAlias('@frontend/web/storage/' . $data . '/'), // Папка куда будут скопированы изображения
+            'savePath' => '/storage/' . $data . '/' // Путь к изображениям для записи в БД
+        ];
+        
+        return $paths;     
+    }
+
+    protected function deleteDirectory($dir) 
+    {
         if ($objects = glob($dir."/*")) {
             foreach($objects as $object) {
                 is_dir($object) ? $this->deleteDirectory($object) : unlink($object);
             }
         }
         rmdir($dir);
+    }
+
+    /**
+    * Функция обеспечивает валидацию переданных значений
+    */
+    protected function validateData($data, $title, $mode) 
+    {
+        $result = true;
+
+        // Проверка поля на ошибку
+        if ($mode == 'empty') {
+            if (empty($data)) {
+                $result = false;
+            }            
+        } elseif ($mode == 'fileExists') {
+            if (!file_exists($data)) {
+                $result = false;
+            }
+        } elseif ($mode == 'isDigit') {
+            if (!ctype_digit($data)) {
+                $result = false;
+            }
+        }
+
+        // Если ошибка найдена, вывод уведомления
+        if (!$result) {
+            echo $title . " " . $this->validateErrors()[$mode] . PHP_EOL;
+        }
+
+        return $result;
+    }
+
+    /**
+    * Функция содержит массив с описанием ошибок валидации
+    */
+    protected function validateErrors()
+    {
+        return 
+        [
+            'empty' => 'value must be filled! Skip data.',
+            'fileExists' => 'file must be exist! Skip data',
+            'isDigit' => 'field value must be a digit! Skip data.'
+        ];
     }
 }
