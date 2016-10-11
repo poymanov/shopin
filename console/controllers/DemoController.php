@@ -5,6 +5,7 @@ namespace console\controllers;
 use Yii;
 use yii\console\Controller;
 use common\models\Brand;
+use common\models\Category;
 
 class DemoController extends Controller
 {
@@ -22,6 +23,9 @@ class DemoController extends Controller
 
         // Загрузка брендов
         $this->loadBrands();
+
+        // Загрузка категорий
+        $this->loadCategories();
     }
 
     protected function loadBrands() 
@@ -41,7 +45,6 @@ class DemoController extends Controller
 
         // Путь к изображениям для записи в БД
         $savePath = $paths['savePath'];
-
 
         // Получение файла с демо данными
         $brands = $this->getDemoDataFile('brands', $path);
@@ -141,6 +144,97 @@ class DemoController extends Controller
     protected function loadCategories() 
     {
         echo "\n Load categories data.\n";
+
+        $paths = $this->initPath('categories');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Получение файла с демо данными
+        $categories = $this->getDemoDataFile('categories', $path);
+
+        if ($categories == false) {
+            exit(0);
+        }
+        
+        // Номер строки, с которой надо начинать обход
+        $row = 1;
+
+        // Схема для получения массива данных
+        $dataScheme = [
+            'name', 'parent_name'
+        ];
+
+        // Массив для временной записи брендов
+        $arrCategories = $this->getDemoDataArray($categories, $dataScheme, $row);
+
+        // Отдельно получаем родительские категории
+        $parentCategories = [];
+
+        foreach ($arrCategories as $category) {
+            
+            // Берем только категории, у которых 
+            // не указано имя родительской категории
+            if (!empty($category['parent_name'])) {
+                continue;
+            }
+
+            $parentCategories[] = $category['name'];
+        }
+
+        // Если нет категорий, то прекращаем загрузку данных
+        if (count($parentCategories) == 0) {
+            echo "Can't load categories data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Очищаем таблицу категорий в БД
+        Category::deleteAll();
+
+        // Запись категорий в БД
+        foreach ($parentCategories as $category) {
+            echo $category . PHP_EOL;
+
+            // Проверки перед записью
+
+            // Наименование категории должно быть заполнено
+            if (!$this->validateData($category, 'Category', 'empty')) {
+                continue;
+            }
+
+            // Запись в БД родительской категории
+            $newCategory = new Category();
+            $newCategory->name = $category;
+
+            if ($newCategory->save()) {
+                echo "Success!" . PHP_EOL;
+
+                // При успешном сохранении родительской категории
+                // находим и записываем все дочерние категории
+
+                foreach ($arrCategories as $child) {
+                    
+                    if ($child['parent_name'] != $category) {
+                        continue; 
+                    }
+
+                    // Запись дочерней категории
+                    $newChildCategory = new Category();
+                    $newChildCategory->name = $child['name'];
+                    $newChildCategory->parent_id = $newCategory->id;
+
+                    if ($newChildCategory->save()) {
+                        echo "Success - Child category!" . PHP_EOL;
+                    } else {
+                        print_r($newChildCategory->errors);
+                    }
+                }
+
+            } else {
+                print_r($newCategory->errors);
+            }
+        }
+
     }
 
     protected function createDirectory($path) 
