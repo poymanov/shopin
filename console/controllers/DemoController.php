@@ -2,10 +2,12 @@
 
 namespace console\controllers;
 
+use common\models\ProductImage;
 use Yii;
 use yii\console\Controller;
 use common\models\Brand;
 use common\models\Category;
+use common\models\Product;
 
 class DemoController extends Controller
 {
@@ -22,10 +24,13 @@ class DemoController extends Controller
         }
 
         // Загрузка брендов
-        $this->loadBrands();
+        //$this->loadBrands();
 
         // Загрузка категорий
-        $this->loadCategories();
+        //$this->loadCategories();
+
+        // Загрузка товаров
+        $this->loadProducts();
     }
 
     protected function loadBrands() 
@@ -47,7 +52,7 @@ class DemoController extends Controller
         $savePath = $paths['savePath'];
 
         // Получение файла с демо данными
-        $brands = $this->getDemoDataFile('brands', $path);
+        $brands = $this->getDemoDataFile($path);
 
         if ($brands == false) {
             exit(0);
@@ -151,7 +156,7 @@ class DemoController extends Controller
         $path = $paths['path'];
 
         // Получение файла с демо данными
-        $categories = $this->getDemoDataFile('categories', $path);
+        $categories = $this->getDemoDataFile($path);
 
         if ($categories == false) {
             exit(0);
@@ -234,7 +239,162 @@ class DemoController extends Controller
                 print_r($newCategory->errors);
             }
         }
+    }
 
+    protected function loadProducts()
+    {
+        echo "\n Load products data.\n";
+
+        $paths = $this->initPath('products');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Директория, в которой будут храниться изображения товаров
+        $storagePath = $paths['storagePath'];
+
+        // Путь к изображениям для записи в БД
+        //$savePath = $paths['savePath'];
+
+        // Получение файла с демо данными
+        $products = $this->getDemoDataFile($path);
+
+        if ($products == false) {
+            exit(0);
+        }
+
+        // Номер строки, с которой надо начинать обход
+        $row = 1;
+
+        // Схема для получения массива данных
+        $dataScheme = [
+            'name', 'price', 'preview_text', 'full_description', 'status', 'discount', 'type', 'brand'
+        ];
+
+        // Массив для временной записи продукторв
+        $arrProducts = $this->getDemoDataArray($products, $dataScheme, $row);
+    
+        // Если в массиве есть данные, 
+        // то очищаем текущую таблицу продуктов и записываем новые
+        if (count($arrProducts) == 0) {
+            echo "Can't load products data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Получение данных об изображениях товаров
+
+        // Путь к файлу с данными об изображениях
+        $imagesPath = Yii::getAlias('@root') . '/demo/products/images.csv';
+
+        // Путь к директории с изображениями
+        $imagesDirectory = Yii::getAlias('@root') . '/demo/products/images/';
+
+        // Файл с изображениями
+        $images = $this->getDemoDataFile($imagesPath);
+
+        // Схема получения массива данных по изображениями
+        $imagesDataScheme = ['product', 'name', 'path', 'title', 'alt', 'main'];
+
+        // Массив с данными об изображениях
+        $arrImages = $this->getDemoDataArray($images, $imagesDataScheme, $row);
+
+        // Удаление всех записей о продуктах из таблиц
+        Product::deleteAll();
+        ProductImage::deleteAll();
+
+        // Удаление директории с изображениями товаров
+        $this->deleteDirectory($storagePath);
+
+        // Запись данных о брендах в БД
+        foreach ($arrProducts as $product) {
+            print_r($product);
+            // Проверки перед записью
+
+            // Наименование продуткра должно быть заполнено
+            if (!$this->validateData($product['name'], 'Name', 'empty')) {
+                continue;
+            }
+
+            // Поле активности должно содержать цифру 1 или 0
+            if ($product['status'] != 0 && $product['status'] != 1) {
+                echo 'Active field value must be 1 or 0 digit! Skip data.' . PHP_EOL;
+                continue;
+            }
+
+            $newProduct = new Product();
+            $newProduct->name = $product['name'];
+            $newProduct->price = $product['price'];
+            $newProduct->preview_text = $product['preview_text'];
+            $newProduct->full_description = $product['full_description'];
+            $newProduct->status = $product['status'];
+            // discount
+            // type
+            // brand
+
+            if ($newProduct->save()) {
+                echo "Success!" . PHP_EOL;
+
+                // При успешной записи товара записываем его изображения
+
+                // Поиск изображений по товару
+                foreach ($arrImages as $image) {
+                    if ($image['product'] != $product['name']) {
+                        continue;
+                    }
+
+                    // Проверка файла на физическое существование
+                    if (!$this->validateData($imagesDirectory . $image['path'], 'Image', 'fileExists')) {
+                        continue;
+                    }
+
+                    // Проверка значения поля main
+                    // Если заполнено, то должно быть равно 1
+                    if (!empty($image['main']) && $image['main'] != '1') {
+                        echo "Main value must be eq 1!" . PHP_EOL;
+                        continue;
+                    }
+
+                    // Получаем расширение файла
+                    $fileExtension = pathinfo($imagesDirectory . $image['path'], PATHINFO_EXTENSION);
+
+                    // Создание директории, где будут храниться изображения
+                    $path = $storagePath . $newProduct->id . '/';
+                    $this->createDirectory($path);
+
+                    // Путь к изображениям для записи в БД
+                    $savePath = '/storage/products/';
+
+                    // Получение префикса для уникализации файла
+                    $prefix = Yii::$app->getSecurity()->generateRandomString(5);
+
+                    // Запись уникального имени для нового файла
+                    $fileName = $prefix . '_product_' . $newProduct->id . '.' . $fileExtension;
+
+                    // Копирование файла изображения
+                    copy($imagesDirectory . $image['path'], $path . $fileName);
+
+                    // Запись информации об изображении в БД
+                    $newProductImage = new ProductImage();
+                    $newProductImage->product_id = $newProduct->id;
+                    $newProductImage->name = $image['name'];
+                    $newProductImage->path = $savePath . $newProduct->id . '/' . $fileName;
+                    $newProductImage->title = $image['title'];
+                    $newProductImage->alt = $image['alt'];
+                    $newProductImage->main = $image['main'];
+
+                    if ($newProductImage->save()) {
+                        echo "Success - Image!" . PHP_EOL;
+                    } else {
+                        print_r($newProductImage->errors);
+                    }
+                }
+
+                // При успешной записи товара записываем его категории
+
+            } else {
+                print_r($newProduct->errors);
+            }
+        }
     }
 
     protected function createDirectory($path) 
@@ -317,19 +477,19 @@ class DemoController extends Controller
     * Функция получает файл с демо данными
     * или возвращает ошибку, если такой файл не найден
     */
-    protected function getDemoDataFile($data, $path)
+    protected function getDemoDataFile($path)
     {
         if (!file_exists($path)) {
-            echo "\n Can't find brand demo file. Check app/demo/" . $data . "/" . $data . ".csv.\n";
+            echo "\n Can't find brand demo file. " . $path . ".\n";
             return false;
         }
 
-        if (($brands = fopen($path, "r")) === false) {
-            echo "\n  Can't load " . $data . " demo data.\n";
+        if (($file = fopen($path, "r")) === false) {
+            echo "\n  Can't load demo data.\n";
             return false;
         }
 
-        return $brands;
+        return $file;
     }
 
     /**
