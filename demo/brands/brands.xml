@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<brands>
+    <brand>
+        <name>Fild</name>
+        <href></href>
+        <file>01.png</file>
+        <status>1</status>
+        <alt>Fild</alt>
+        <title>Fild</title>
+        <sort>1</sort>
+    </brand>
+    <brand>
+        <name>Rebook</name>
+        <href></href>
+        <file>02.png</file>
+        <status>1</status>
+        <alt>Rebook</alt>
+        <title>Rebook</title>
+        <sort>1</sort>
+    </brand>
+    <brand>
+        <name>Puma</name>
+        <href></href>
+        <file>03.png</file>
+        <status>1</status>
+        <alt>Puma</alt>
+        <title>Puma</title>
+        <sort>1</sort>
+    </brand>
+    <brand>
+        <name>Adidas</name>
+        <href></href>
+        <file>04.png</file>
+        <status>1</status>
+        <alt>Adidas</alt>
+        <title>Adidas</title>
+        <sort>1</sort>
+    </brand>
+</brands>

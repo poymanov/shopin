@@ -24,13 +24,13 @@ class DemoController extends Controller
         }
 
         // Загрузка брендов
-        //$this->loadBrands();
+        $this->loadBrands();
 
         // Загрузка категорий
         //$this->loadCategories();
 
         // Загрузка товаров
-        $this->loadProducts();
+        //$this->loadProducts();
     }
 
     protected function loadBrands() 
@@ -51,26 +51,17 @@ class DemoController extends Controller
         // Путь к изображениям для записи в БД
         $savePath = $paths['savePath'];
 
-        // Получение файла с демо данными
-        $brands = $this->getDemoDataFile($path);
-
-        if ($brands == false) {
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
             exit(0);
         }
-        
-        // Номер строки, с которой надо начинать обход
-        $row = 1;
 
-        // Схема для получения массива данных
-        $dataScheme = [
-            'name', 'href', 'file', 'status', 'alt', 'title', 'sort'
-        ];
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
 
-        // Массив для временной записи брендов
-        $arrBrands = $this->getDemoDataArray($brands, $dataScheme, $row);
-    
-        // Если в массиве есть данные, то очищаем текущую таблицу брендов и записываем новые
-        if (count($arrBrands) == 0) {
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
             echo "Can't load brands data from file. Empty." . PHP_EOL;
             exit(0);
         }
@@ -88,58 +79,68 @@ class DemoController extends Controller
         $this->createDirectory($storagePath);
 
         // Запись данных о брендах в БД
-        foreach ($arrBrands as $brand) {
+        foreach ($xml->brand as $brand) {
             print_r($brand);
+
+            // Получение данных из xml
+            $name = (string) $brand->name;
+            $href = (string) $brand->href;
+            $file = (string) $brand->file;
+            $status = (string) $brand->status;
+            $alt = (string) $brand->alt;
+            $title = (string) $brand->title;
+            $sort = (string) $brand->sort;
+
             // Проверки перед записью
 
             // Наименование бренда должно быть заполнено
-            if (!$this->validateData($brand['name'], 'Name', 'empty')) {
+            if (!$this->validateData($name, 'Name', 'empty')) {
                 continue;
             }
 
             // Поле изображения должно содержать в себе значение
-            if (!$this->validateData($brand['file'], 'File', 'empty')) {
+            if (!$this->validateData($file, 'File', 'empty')) {
                 continue;
             }
             
             // Изображение должно физически существовать в структуре проекта
-            if (!$this->validateData($imagesPath . $brand['file'], 'Image', 'fileExists')) {
+            if (!$this->validateData($imagesPath . $file, 'Image', 'fileExists')) {
                 continue;
             }
            
             // Поле активности должно быть цифровым значением
-            if (!$this->validateData($brand['status'], 'Active', 'isDigit')) {
+            if (!$this->validateData($status, 'Status', 'isDigit')) {
                 continue;
             }
 
             // Поле активности должно содержать цифру 1 или 0
-            if ($brand['status'] != 0 && $brand['status'] != 1) {
+            if ($status != 0 && $status != 1) {
                 echo 'Active field value must be 1 or 0 digit! Skip data.' . PHP_EOL;
                 continue;
             }
 
             // Поле сортировки должно быть цифровым значением
             // если оно заполнено
-            if (!empty($brand['sort']) && 
-                !$this->validateData($brand['sort'], 'Sort', 'isDigit')) {
+            if (!empty($sort) &&
+                !$this->validateData($sort, 'Sort', 'isDigit')) {
                 continue;
             }
 
             // Запись значений в БД
             $newBrand = new Brand();
-            $newBrand->name = $brand['name'];
-            $newBrand->href = $brand['href'];
-            $newBrand->image = $savePath . $brand['file'];
-            $newBrand->status = $brand['status'];
-            $newBrand->alt = $brand['alt'];
-            $newBrand->title = $brand['title'];
-            $newBrand->sort = $brand['sort'];
+            $newBrand->name = $name;
+            $newBrand->href = $href;
+            $newBrand->image = $savePath . $file;
+            $newBrand->status = $status;
+            $newBrand->alt = $alt;
+            $newBrand->title = $title;
+            $newBrand->sort = $sort;
 
             if ($newBrand->save()) {
                 echo "Success!" . PHP_EOL;
 
                 // При успешном сохранении модели переносим файлы в папку storage
-                copy($imagesPath . $brand['file'], $storagePath . $brand['file']);
+                copy($imagesPath . $file, $storagePath . $file);
             } else {
                 print_r($newBrand->errors);
             }
@@ -411,7 +412,7 @@ class DemoController extends Controller
     protected function initPath($data)
     {
         $paths = [
-            'path' => Yii::getAlias('@root') . '/demo/' . $data . '/' . $data . '.csv', // CSV файл с данными            
+            'path' => Yii::getAlias('@root') . '/demo/' . $data . '/' . $data . '.xml', // CSV файл с данными
             'imagesPath' => Yii::getAlias('@root/demo/' . $data . '/images/'), // Папка с изображениями для данных
             'storagePath' => Yii::getAlias('@frontend/web/storage/' . $data . '/'), // Папка куда будут скопированы изображения
             'savePath' => '/storage/' . $data . '/' // Путь к изображениям для записи в БД
@@ -474,54 +475,15 @@ class DemoController extends Controller
     }
 
     /**
-    * Функция получает файл с демо данными
-    * или возвращает ошибку, если такой файл не найден
+    * Функция проверяет наличие файла с демо-данными
     */
-    protected function getDemoDataFile($path)
+    protected function checkDemoDataFile($path)
     {
         if (!file_exists($path)) {
-            echo "\n Can't find brand demo file. " . $path . ".\n";
+            echo "\n Can't find brand demo file: " . $path . ".\n";
             return false;
         }
 
-        if (($file = fopen($path, "r")) === false) {
-            echo "\n  Can't load demo data.\n";
-            return false;
-        }
-
-        return $file;
-    }
-
-    /**
-    * Функция обходит файл с демо данными
-    * и формирует массив согласно схеме
-    */
-    protected function getDemoDataArray($dataDemo, $scheme, $row)
-    {
-        $arrData = [];
-
-        // Счетчик строк перебора файла
-        $i = 0;
-
-        // Получение массива демо данных согласно схеме
-        while (($data = fgetcsv($dataDemo, ";")) !== false) {
-
-            if ($i < $row) {
-                $i++;
-                continue;
-            }
-
-            $i++;
-
-            // Получение массива из строки файла
-            $arr = explode(';', $data[0]);
-
-            // Запись строки в массив брендов
-            foreach ($scheme as $key => $value) {
-                $arrData[$i][$value] = $arr[$key];
-            }
-        }
-
-        return $arrData;
+        return true;
     }
 }
