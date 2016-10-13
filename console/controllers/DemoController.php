@@ -2,6 +2,7 @@
 
 namespace console\controllers;
 
+use common\models\ProductBrand;
 use common\models\ProductDiscount;
 use common\models\ProductImage;
 use common\models\ProductType;
@@ -37,6 +38,8 @@ class DemoController extends Controller
         // Загрузка типов товаров
         $this->loadProductsTypes();
 
+        // Загрузка брендов товаров
+        $this->loadProductsBrands();
         // Загрузка товаров
         //$this->loadProducts();
     }
@@ -490,6 +493,58 @@ class DemoController extends Controller
                 echo "Success!" . PHP_EOL;
             } else {
                 print_r($newProductType->errors);
+            }
+        }
+    }
+
+    protected function loadProductsBrands()
+    {
+        echo "\n Load products brands data.\n";
+
+        $paths = $this->initPath('products_brands');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
+            exit(0);
+        }
+
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
+
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
+            echo "Can't load products brands data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Удаление всех записей о брендах из таблицы
+        ProductBrand::deleteAll();
+
+        // Загрузка данных в БД
+        foreach ($xml->brand as $brand) {
+            print_r($brand);
+
+            // Получение данных из xml
+            $name = (string) $brand->name;
+
+            // Проверки перед записью
+
+            // Наименование должно быть заполнено
+            if (!$this->validateData($name, 'Name', 'empty')) {
+                continue;
+            }
+
+            $newProductBrand = new ProductBrand();
+            $newProductBrand->name = $name;
+
+            if ($newProductBrand->save()) {
+                echo "Success!" . PHP_EOL;
+            } else {
+                print_r($newProductBrand->errors);
             }
         }
     }
