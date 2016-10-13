@@ -2,6 +2,7 @@
 
 namespace console\controllers;
 
+use common\models\ProductDiscount;
 use common\models\ProductImage;
 use Yii;
 use yii\console\Controller;
@@ -27,7 +28,10 @@ class DemoController extends Controller
         //$this->loadBrands();
 
         // Загрузка категорий
-        $this->loadCategories();
+        //$this->loadCategories();
+
+        // Загрузка типов скидок товаров
+        $this->loadProductsDiscounts();
 
         // Загрузка товаров
         //$this->loadProducts();
@@ -378,6 +382,58 @@ class DemoController extends Controller
 
             } else {
                 print_r($newProduct->errors);
+            }
+        }
+    }
+
+    protected function loadProductsDiscounts()
+    {
+        echo "\n Load products discounts data.\n";
+
+        $paths = $this->initPath('products_discounts');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
+            exit(0);
+        }
+
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
+
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
+            echo "Can't load products discounts data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Удаление всех записей о брендах из таблицы
+        ProductDiscount::deleteAll();
+
+        // Загрузка данных в БД
+        foreach ($xml->discount as $discount) {
+            print_r($discount);
+
+            // Получение данных из xml
+            $name = (string) $discount->name;
+
+            // Проверки перед записью
+
+            // Наименование должно быть заполнено
+            if (!$this->validateData($name, 'Name', 'empty')) {
+                continue;
+            }
+
+            $newProductDiscount = new ProductDiscount();
+            $newProductDiscount->name = $name;
+
+            if ($newProductDiscount->save()) {
+                echo "Success!" . PHP_EOL;
+            } else {
+                print_r($newProductDiscount->errors);
             }
         }
     }

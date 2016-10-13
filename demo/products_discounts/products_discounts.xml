@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<discount>
+    <discount>
+        <name>Upto - 10%</name>
+    </discount>
+    <discount>
+        <name>40% - 50%</name>
+    </discount>
+    <discount>
+        <name>30% - 20%</name>
+    </discount>
+    <discount>
+        <name>10% - 5%</name>
+    </discount>
+    <discount>
+        <name>Others</name>
+    </discount>
+</discount>
