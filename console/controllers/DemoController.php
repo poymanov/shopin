@@ -4,6 +4,7 @@ namespace console\controllers;
 
 use common\models\ProductDiscount;
 use common\models\ProductImage;
+use common\models\ProductType;
 use Yii;
 use yii\console\Controller;
 use common\models\Brand;
@@ -25,13 +26,16 @@ class DemoController extends Controller
         }
 
         // Загрузка брендов
-        //$this->loadBrands();
+        $this->loadBrands();
 
         // Загрузка категорий
-        //$this->loadCategories();
+        $this->loadCategories();
 
         // Загрузка типов скидок товаров
         $this->loadProductsDiscounts();
+
+        // Загрузка типов товаров
+        $this->loadProductsTypes();
 
         // Загрузка товаров
         //$this->loadProducts();
@@ -434,6 +438,58 @@ class DemoController extends Controller
                 echo "Success!" . PHP_EOL;
             } else {
                 print_r($newProductDiscount->errors);
+            }
+        }
+    }
+
+    protected function loadProductsTypes()
+    {
+        echo "\n Load products types data.\n";
+
+        $paths = $this->initPath('products_types');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
+            exit(0);
+        }
+
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
+
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
+            echo "Can't load products types data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Удаление всех записей о брендах из таблицы
+        ProductType::deleteAll();
+
+        // Загрузка данных в БД
+        foreach ($xml->type as $type) {
+            print_r($type);
+
+            // Получение данных из xml
+            $name = (string) $type->name;
+
+            // Проверки перед записью
+
+            // Наименование должно быть заполнено
+            if (!$this->validateData($name, 'Name', 'empty')) {
+                continue;
+            }
+
+            $newProductType = new ProductType();
+            $newProductType->name = $name;
+
+            if ($newProductType->save()) {
+                echo "Success!" . PHP_EOL;
+            } else {
+                print_r($newProductType->errors);
             }
         }
     }

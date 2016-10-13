@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<types>
+    <type>
+        <name>Jackets and Coats</name>
+    </type>
+    <type>
+        <name>Jeans</name>
+    </type>
+    <type>
+        <name>Shirts</name>
+    </type>
+    <type>
+        <name>Sunglasses</name>
+    </type>
+    <type>
+        <name>Swimwear</name>
+    </type>
+    <type>
+        <name>Sofa Cum Beds</name>
+    </type>
+    <type>
+        <name>Caps and Hats</name>
+    </type>
+    <type>
+        <name>Bags</name>
+    </type>
+</types>
