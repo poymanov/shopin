@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<categories>
+    <category>
+        <name>Man</name>
+        <subcategories>
+            <category>T-shirts</category>
+            <category>Jeans</category>
+        </subcategories>
+    </category>
+    <category>
+        <name>Woman</name>
+        <subcategories>
+            <category>Woman subcategory</category>
+        </subcategories>
+    </category>
+    <category>
+        <name>Kids</name>
+        <subcategories>
+            <category>Kids subcategory</category>
+        </subcategories>
+    </category>
+    <category>
+        <name>Accessories</name>
+        <subcategories>
+            <category>Accessories subcategory</category>
+        </subcategories>
+    </category>
+    <category>
+        <name>Shoes</name>
+        <subcategories>
+            <category>Shoes subcategory</category>
+        </subcategories>
+    </category>
+</categories>

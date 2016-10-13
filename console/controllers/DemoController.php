@@ -24,10 +24,10 @@ class DemoController extends Controller
         }
 
         // Загрузка брендов
-        $this->loadBrands();
+        //$this->loadBrands();
 
         // Загрузка категорий
-        //$this->loadCategories();
+        $this->loadCategories();
 
         // Загрузка товаров
         //$this->loadProducts();
@@ -156,40 +156,17 @@ class DemoController extends Controller
         // Получение CSV файла с данными
         $path = $paths['path'];
 
-        // Получение файла с демо данными
-        $categories = $this->getDemoDataFile($path);
-
-        if ($categories == false) {
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
             exit(0);
         }
-        
-        // Номер строки, с которой надо начинать обход
-        $row = 1;
 
-        // Схема для получения массива данных
-        $dataScheme = [
-            'name', 'parent_name'
-        ];
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
 
-        // Массив для временной записи брендов
-        $arrCategories = $this->getDemoDataArray($categories, $dataScheme, $row);
-
-        // Отдельно получаем родительские категории
-        $parentCategories = [];
-
-        foreach ($arrCategories as $category) {
-            
-            // Берем только категории, у которых 
-            // не указано имя родительской категории
-            if (!empty($category['parent_name'])) {
-                continue;
-            }
-
-            $parentCategories[] = $category['name'];
-        }
-
-        // Если нет категорий, то прекращаем загрузку данных
-        if (count($parentCategories) == 0) {
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
             echo "Can't load categories data from file. Empty." . PHP_EOL;
             exit(0);
         }
@@ -197,20 +174,22 @@ class DemoController extends Controller
         // Очищаем таблицу категорий в БД
         Category::deleteAll();
 
-        // Запись категорий в БД
-        foreach ($parentCategories as $category) {
-            echo $category . PHP_EOL;
+        foreach ($xml->category as $category) {
+            print_r($category);
+
+            // Получение данных из xml
+            $name = (string) $category->name;
 
             // Проверки перед записью
 
             // Наименование категории должно быть заполнено
-            if (!$this->validateData($category, 'Category', 'empty')) {
+            if (!$this->validateData($name, 'Category', 'empty')) {
                 continue;
             }
 
-            // Запись в БД родительской категории
+            //Запись в БД родительской категории
             $newCategory = new Category();
-            $newCategory->name = $category;
+            $newCategory->name = $name;
 
             if ($newCategory->save()) {
                 echo "Success!" . PHP_EOL;
@@ -218,15 +197,20 @@ class DemoController extends Controller
                 // При успешном сохранении родительской категории
                 // находим и записываем все дочерние категории
 
-                foreach ($arrCategories as $child) {
-                    
-                    if ($child['parent_name'] != $category) {
-                        continue; 
+                foreach ($category->subcategories as $subcategory) {
+
+                    // Получение данных из xml
+                    $nameSubcategory = (string) $subcategory->category;
+
+                    // Проверки перед записью в БД
+                    // Наименование категории должно быть заполнено
+                    if (!$this->validateData($nameSubcategory, 'Category', 'empty')) {
+                        continue;
                     }
 
                     // Запись дочерней категории
                     $newChildCategory = new Category();
-                    $newChildCategory->name = $child['name'];
+                    $newChildCategory->name = $nameSubcategory;
                     $newChildCategory->parent_id = $newCategory->id;
 
                     if ($newChildCategory->save()) {
