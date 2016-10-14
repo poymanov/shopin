@@ -274,6 +274,9 @@ class DemoController extends Controller
         ProductImage::deleteAll();
         ProductsCategories::deleteAll();
 
+        // Очистка кэша популярных позиций
+        Yii::$app->cacheFrontend->delete('trendingItems');
+
         // Удаление директории с изображениями товаров
         $this->deleteDirectory($storagePath);
 

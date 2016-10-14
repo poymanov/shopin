@@ -229,15 +229,24 @@ class Product extends \yii\db\ActiveRecord
 
     public function getMainCategory()
     {
-        return ProductsCategories::find()->where(['product_id' => $this->id])->one();
+        $categories = $this->allCategories;
+
+        // Главной категорией считаем категорию, у которой не заполнено поле parent_id
+        if ($categories) {
+            foreach ($categories as $category) {
+                if (empty($category->category->parent_id)) {
+                    return $category->category;
+                }
+            }
+        } else {
+            return null;
+        }
     }
     
     public function getMainImage()
     {
 
         $images = $this->productImages;
-//        print_r(count($images));
-//        exit;
 
         $mainImage = '';
 
@@ -278,7 +287,7 @@ class Product extends \yii\db\ActiveRecord
         $category = $this->getMainCategory();
 
         if ($category) {
-            return $category->category->name;
+            return $category->name;
         } else {
             return null;
         }
