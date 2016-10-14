@@ -5,6 +5,7 @@ namespace console\controllers;
 use common\models\ProductBrand;
 use common\models\ProductDiscount;
 use common\models\ProductImage;
+use common\models\ProductsCategories;
 use common\models\ProductType;
 use Yii;
 use yii\console\Controller;
@@ -40,8 +41,9 @@ class DemoController extends Controller
 
         // Загрузка брендов товаров
         $this->loadProductsBrands();
+
         // Загрузка товаров
-        //$this->loadProducts();
+        $this->loadProducts();
     }
 
     protected function loadBrands() 
@@ -249,83 +251,86 @@ class DemoController extends Controller
         // Директория, в которой будут храниться изображения товаров
         $storagePath = $paths['storagePath'];
 
-        // Путь к изображениям для записи в БД
-        //$savePath = $paths['savePath'];
-
-        // Получение файла с демо данными
-        $products = $this->getDemoDataFile($path);
-
-        if ($products == false) {
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
             exit(0);
         }
 
-        // Номер строки, с которой надо начинать обход
-        $row = 1;
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
 
-        // Схема для получения массива данных
-        $dataScheme = [
-            'name', 'price', 'preview_text', 'full_description', 'status', 'discount', 'type', 'brand'
-        ];
-
-        // Массив для временной записи продукторв
-        $arrProducts = $this->getDemoDataArray($products, $dataScheme, $row);
-    
-        // Если в массиве есть данные, 
-        // то очищаем текущую таблицу продуктов и записываем новые
-        if (count($arrProducts) == 0) {
-            echo "Can't load products data from file. Empty." . PHP_EOL;
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
+            echo "Can't load brands data from file. Empty." . PHP_EOL;
             exit(0);
         }
-
-        // Получение данных об изображениях товаров
-
-        // Путь к файлу с данными об изображениях
-        $imagesPath = Yii::getAlias('@root') . '/demo/products/images.csv';
 
         // Путь к директории с изображениями
         $imagesDirectory = Yii::getAlias('@root') . '/demo/products/images/';
 
-        // Файл с изображениями
-        $images = $this->getDemoDataFile($imagesPath);
-
-        // Схема получения массива данных по изображениями
-        $imagesDataScheme = ['product', 'name', 'path', 'title', 'alt', 'main'];
-
-        // Массив с данными об изображениях
-        $arrImages = $this->getDemoDataArray($images, $imagesDataScheme, $row);
-
         // Удаление всех записей о продуктах из таблиц
         Product::deleteAll();
         ProductImage::deleteAll();
+        ProductsCategories::deleteAll();
 
         // Удаление директории с изображениями товаров
         $this->deleteDirectory($storagePath);
 
-        // Запись данных о брендах в БД
-        foreach ($arrProducts as $product) {
+        // Запись информации в БД
+        foreach ($xml->product as $product) {
             print_r($product);
+
+            // Получение данных из xml
+            $name = (string) $product->name;
+            $price = (string) $product->price;
+            $preview_text = (string) $product->preview_text;
+            $full_description = (string) $product->full_description;
+            $status = (string) $product->status;
+            $discount = (string) $product->discount;
+            $type = (string) $product->type;
+            $brand = (string) $product->brand;
+
             // Проверки перед записью
 
-            // Наименование продуткра должно быть заполнено
-            if (!$this->validateData($product['name'], 'Name', 'empty')) {
+            // Наименование должно быть заполнено
+            if (!$this->validateData($name, 'Name', 'empty')) {
                 continue;
             }
 
             // Поле активности должно содержать цифру 1 или 0
-            if ($product['status'] != 0 && $product['status'] != 1) {
+            if ($status != 0 && $status != 1) {
                 echo 'Active field value must be 1 or 0 digit! Skip data.' . PHP_EOL;
                 continue;
             }
 
             $newProduct = new Product();
-            $newProduct->name = $product['name'];
-            $newProduct->price = $product['price'];
-            $newProduct->preview_text = $product['preview_text'];
-            $newProduct->full_description = $product['full_description'];
-            $newProduct->status = $product['status'];
-            // discount
-            // type
-            // brand
+            $newProduct->name = $name;
+            $newProduct->price = $price;
+            $newProduct->preview_text = $preview_text;
+            $newProduct->full_description = $full_description;
+            $newProduct->status = $status;
+
+            // Поиск бренда товара и запись при его наличии
+            $brandProduct = ProductBrand::findOne(['name' => $brand]);
+
+            if ($brandProduct) {
+                $newProduct->brand_id = $brandProduct->id;
+            }
+
+            // Поиск типа товара и запись при его наличии
+            $typeProduct = ProductType::findOne(['name' => $type]);
+
+            if ($typeProduct) {
+                $newProduct->type_id = $typeProduct->id;
+            }
+
+            // Поиск типа скидки и запись при её наличии
+            $discountProduct = ProductDiscount::findOne(['name' => $discount]);
+
+            if ($discountProduct) {
+                $newProduct->discount_id = $discountProduct->id;
+            }
 
             if ($newProduct->save()) {
                 echo "Success!" . PHP_EOL;
@@ -333,25 +338,29 @@ class DemoController extends Controller
                 // При успешной записи товара записываем его изображения
 
                 // Поиск изображений по товару
-                foreach ($arrImages as $image) {
-                    if ($image['product'] != $product['name']) {
-                        continue;
-                    }
+                foreach ($product->images->image as $image) {
+
+                    // Получение данных из xml
+                    $name = (string) $image->name;
+                    $pathImage = (string) $image->path;
+                    $title = (string) $image->title;
+                    $alt = (string) $image->alt;
+                    $main = (string) $image->main;
 
                     // Проверка файла на физическое существование
-                    if (!$this->validateData($imagesDirectory . $image['path'], 'Image', 'fileExists')) {
+                    if (!$this->validateData($imagesDirectory . $pathImage, 'Image', 'fileExists')) {
                         continue;
                     }
 
                     // Проверка значения поля main
                     // Если заполнено, то должно быть равно 1
-                    if (!empty($image['main']) && $image['main'] != '1') {
+                    if (!empty($main) && $main != '1') {
                         echo "Main value must be eq 1!" . PHP_EOL;
                         continue;
                     }
 
                     // Получаем расширение файла
-                    $fileExtension = pathinfo($imagesDirectory . $image['path'], PATHINFO_EXTENSION);
+                    $fileExtension = pathinfo($imagesDirectory . $pathImage, PATHINFO_EXTENSION);
 
                     // Создание директории, где будут храниться изображения
                     $path = $storagePath . $newProduct->id . '/';
@@ -367,16 +376,16 @@ class DemoController extends Controller
                     $fileName = $prefix . '_product_' . $newProduct->id . '.' . $fileExtension;
 
                     // Копирование файла изображения
-                    copy($imagesDirectory . $image['path'], $path . $fileName);
+                    copy($imagesDirectory . $pathImage, $path . $fileName);
 
                     // Запись информации об изображении в БД
                     $newProductImage = new ProductImage();
                     $newProductImage->product_id = $newProduct->id;
-                    $newProductImage->name = $image['name'];
+                    $newProductImage->name = $name;
                     $newProductImage->path = $savePath . $newProduct->id . '/' . $fileName;
-                    $newProductImage->title = $image['title'];
-                    $newProductImage->alt = $image['alt'];
-                    $newProductImage->main = $image['main'];
+                    $newProductImage->title = $title;
+                    $newProductImage->alt = $alt;
+                    $newProductImage->main = $main;
 
                     if ($newProductImage->save()) {
                         echo "Success - Image!" . PHP_EOL;
@@ -384,13 +393,133 @@ class DemoController extends Controller
                         print_r($newProductImage->errors);
                     }
                 }
+                
+                // Поиск категорий товара
+                foreach ($product->categories->category as $category) {
 
-                // При успешной записи товара записываем его категории
+                    // Получение значений из xml
+                    $name = (string) $category->name;
+
+                    // Предварительные проверки
+
+                    // Наименование должно быть заполнено
+                    if (!$this->validateData($name, 'Name', 'empty')) {
+                        continue;
+                    }
+
+                    // Поиск категории в списке категорий и запись при её наличии
+                    $dbCategory = Category::findOne(['name' => $name]);
+
+                    if ($dbCategory) {
+                        $newProductCategory = new ProductsCategories();
+                        $newProductCategory->product_id = $newProduct->id;
+                        $newProductCategory->category_id = $dbCategory->id;
+
+                        if ($newProductCategory->save()) {
+                            echo "Success Category!" . PHP_EOL;
+                        } else {
+                            print_r($newProductCategory->errors);
+                        }
+
+
+                    }
+                }
 
             } else {
                 print_r($newProduct->errors);
             }
         }
+//
+//        // Запись данных о брендах в БД
+//        foreach ($arrProducts as $product) {
+//            print_r($product);
+//            // Проверки перед записью
+//
+//            // Наименование продуткра должно быть заполнено
+//            if (!$this->validateData($product['name'], 'Name', 'empty')) {
+//                continue;
+//            }
+//
+//            // Поле активности должно содержать цифру 1 или 0
+//            if ($product['status'] != 0 && $product['status'] != 1) {
+//                echo 'Active field value must be 1 or 0 digit! Skip data.' . PHP_EOL;
+//                continue;
+//            }
+//
+//            $newProduct = new Product();
+//            $newProduct->name = $product['name'];
+//            $newProduct->price = $product['price'];
+//            $newProduct->preview_text = $product['preview_text'];
+//            $newProduct->full_description = $product['full_description'];
+//            $newProduct->status = $product['status'];
+//            // discount
+//            // type
+//            // brand
+//
+//            if ($newProduct->save()) {
+//                echo "Success!" . PHP_EOL;
+//
+//                // При успешной записи товара записываем его изображения
+//
+//                // Поиск изображений по товару
+//                foreach ($arrImages as $image) {
+//                    if ($image['product'] != $product['name']) {
+//                        continue;
+//                    }
+//
+//                    // Проверка файла на физическое существование
+//                    if (!$this->validateData($imagesDirectory . $image['path'], 'Image', 'fileExists')) {
+//                        continue;
+//                    }
+//
+//                    // Проверка значения поля main
+//                    // Если заполнено, то должно быть равно 1
+//                    if (!empty($image['main']) && $image['main'] != '1') {
+//                        echo "Main value must be eq 1!" . PHP_EOL;
+//                        continue;
+//                    }
+//
+//                    // Получаем расширение файла
+//                    $fileExtension = pathinfo($imagesDirectory . $image['path'], PATHINFO_EXTENSION);
+//
+//                    // Создание директории, где будут храниться изображения
+//                    $path = $storagePath . $newProduct->id . '/';
+//                    $this->createDirectory($path);
+//
+//                    // Путь к изображениям для записи в БД
+//                    $savePath = '/storage/products/';
+//
+//                    // Получение префикса для уникализации файла
+//                    $prefix = Yii::$app->getSecurity()->generateRandomString(5);
+//
+//                    // Запись уникального имени для нового файла
+//                    $fileName = $prefix . '_product_' . $newProduct->id . '.' . $fileExtension;
+//
+//                    // Копирование файла изображения
+//                    copy($imagesDirectory . $image['path'], $path . $fileName);
+//
+//                    // Запись информации об изображении в БД
+//                    $newProductImage = new ProductImage();
+//                    $newProductImage->product_id = $newProduct->id;
+//                    $newProductImage->name = $image['name'];
+//                    $newProductImage->path = $savePath . $newProduct->id . '/' . $fileName;
+//                    $newProductImage->title = $image['title'];
+//                    $newProductImage->alt = $image['alt'];
+//                    $newProductImage->main = $image['main'];
+//
+//                    if ($newProductImage->save()) {
+//                        echo "Success - Image!" . PHP_EOL;
+//                    } else {
+//                        print_r($newProductImage->errors);
+//                    }
+//                }
+//
+//                // При успешной записи товара записываем его категории
+//
+//            } else {
+//                print_r($newProduct->errors);
+//            }
+//        }
     }
 
     protected function loadProductsDiscounts()
@@ -576,10 +705,13 @@ class DemoController extends Controller
     {
         if ($objects = glob($dir."/*")) {
             foreach($objects as $object) {
-                is_dir($object) ? $this->deleteDirectory($object) : unlink($object);
+                file_exists($object) && is_dir($object) ? $this->deleteDirectory($object) : unlink($object);
             }
         }
-        rmdir($dir);
+
+        if (file_exists($dir) && is_dir($dir)) {
+            rmdir($dir);
+        }
     }
 
     /**
