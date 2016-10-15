@@ -1,14 +1,42 @@
+<?php
+
+use yii\helpers\Url;
+
+/* @var $category common\models\Category */
+
+?>
+
 <h4 class="cate">Categories</h4>
 
 <?php if ($categories) {?>
     <ul class="menu-drop">
         <?php foreach ($categories as $category) {?>
-            <li class="item1"><a href="#"><?=$category->name?></a>
-<!--                <ul class="cute">-->
-<!--                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>-->
-<!--                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>-->
-<!--                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>-->
-<!--                </ul>-->
+
+            <?php
+
+                // Дочернюю категорию выводить не нужно
+                if (!empty($category->parent_id)) {
+                    continue;
+                }
+
+            ?>
+
+            <li class="item1">
+                <a href="<?=Url::to(['category/index', 'slug' => $category->slug])?>">
+                    <?=$category->name?>
+                </a>
+
+                <?php if ($category->childCategories) {?>
+                    <ul class="cute">
+                        <?php foreach ($category->childCategories as $childCategory) { ?>
+                            <li class="subitem1">
+                                <a href="<?=Url::to(['category/index', 'slug' => $childCategory->slug])?>">
+                                    <?=$childCategory->name?>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
             </li>
         <?php }?>
     </ul>

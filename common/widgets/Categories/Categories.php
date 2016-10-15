@@ -17,7 +17,7 @@ class Categories extends \yii\bootstrap\Widget
 
     public function run()
     {
-        $categories = Category::find()->all();
+        $categories = Category::find()->with('childCategories')->all();
         
         return $this->render('categories', compact(['categories']));
     }

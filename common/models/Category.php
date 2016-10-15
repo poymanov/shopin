@@ -58,4 +58,13 @@ class Category extends \yii\db\ActiveRecord
             'parent_id' => 'Parent ID',
         ];
     }
+
+    /**
+     * Получение дочерних категорий данной категории
+     */
+    public function getChildCategories()
+    {
+        return $this->hasMany(Category::className(), ['parent_id' => 'id']);
+    }
+
 }
