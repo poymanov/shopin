@@ -17,8 +17,26 @@ class Categories extends \yii\bootstrap\Widget
 
     public function run()
     {
-        $categories = Category::find()->with('childCategories')->all();
-        
-        return $this->render('categories', compact(['categories']));
+
+        // Проверяем кэш виджета
+        $html = Yii::$app->cache->get('categories');
+
+        // Если кэш отсутствует, делаем запрос
+        if (!$html) {
+            $categories = Category::find()->with('childCategories')->all();
+
+            $html = $this->renderCategories($categories);
+
+            // Устанавливаем кэш на час
+            Yii::$app->cache->set('categories', $html, 3600);
+        }
+
+        return $html;
+    }
+
+    protected function renderCategories($categories) {
+        ob_start();
+        include __DIR__ . '/views/categories.php';
+        return ob_get_clean();
     }
 }

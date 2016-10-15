@@ -187,6 +187,9 @@ class DemoController extends Controller
         // Очищаем таблицу категорий в БД
         Category::deleteAll();
 
+        // Очистка кэша категорий
+        Yii::$app->cacheFrontend->delete('categories');
+
         foreach ($xml->category as $category) {
             print_r($category);
 
