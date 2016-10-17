@@ -81,7 +81,7 @@ class Category extends \yii\db\ActiveRecord
      * Получение списка товаров по категории
      */
 
-    public function getAllProducts()
+    public function getAllProducts($mode = null)
     {
         // Получение id всех товаров по категории
         $productsCategory = $this->getProducts()->select(['product_id'])->asArray()->all();
@@ -89,7 +89,15 @@ class Category extends \yii\db\ActiveRecord
         // Преобразование результатов в более удобный массив для запроса
         $productArray = ArrayHelper::getColumn($productsCategory, 'product_id');
 
-        $products = Product::find()->with('productImages', 'allCategories', 'allCategories.category')->where(['id' => $productArray])->all();
+        // Возвращаем несформированный запрос, если это необходимо
+
+        $query = Product::find()->with('productImages', 'allCategories', 'allCategories.category')->where(['id' => $productArray]);
+
+        if ($mode == 'query') {
+            return $query;
+        } else {
+            $products = $query->all();
+        }
 
         return $products;
     }

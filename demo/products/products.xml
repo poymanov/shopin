@@ -288,4 +288,436 @@
             </category>
         </categories>
     </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 2</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 3</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 4</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 5</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 6</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 7</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 8</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 9</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Prokyde Zidane 10 Tshirt 10</name>
+        <price>29</price>
+        <preview_text>preview</preview_text>
+        <full_description>description</full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type>Shirts</type>
+        <brand>New Balance</brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Man</name>
+            </category>
+            <category>
+                <name>T-shirts</name>
+            </category>
+        </categories>
+    </product>
 </products>

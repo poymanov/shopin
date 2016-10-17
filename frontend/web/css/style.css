@@ -2349,3 +2349,13 @@ td.add-check a {
 .row-sky-form {
 	margin: 1em 0;
 }
+
+.catalog-item-grid {
+	display: inline-block;
+	float: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 32.333333%;
+	vertical-align: top;
+	padding-bottom: 15px;
+}

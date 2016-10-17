@@ -41,6 +41,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'product/<slug>' => 'product/index',
+                'category/<slug>/<page:\d+>/<per-page:\d+>' => 'category/index',
                 'category/<slug>' => 'category/index',
             ],
         ],

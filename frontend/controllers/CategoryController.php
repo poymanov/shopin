@@ -7,6 +7,7 @@ use common\models\ProductType;
 use yii\web\Controller;
 use common\models\Category;
 use common\models\ProductDiscount;
+use yii\data\Pagination;
 
 /**
  * Product controller
@@ -38,15 +39,23 @@ class CategoryController extends Controller
         // Получение брендов товаров
         $brands = ProductBrand::find()->all();
 
-        // Получение списка товаров по категории
-        $products = $category->allProducts;
+        // Получение запроса товаров категории
+        $query = $category->getAllProducts('query');
+
+        // Настройки пагинации
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 9]);
+        $products = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
 
         return $this->render('index', [
             'category' => $category,
             'discounts' => $discounts,
             'types' => $types,
             'brands' => $brands,
-            'products' => $products
+            'products' => $products,
+            'pages' => $pages
         ]);
 
     }

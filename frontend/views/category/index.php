@@ -2,6 +2,7 @@
 
 use common\widgets\Categories\Categories;
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 $this->title = $category->name;
 
@@ -14,7 +15,7 @@ $this->title = $category->name;
             <div class="mid-popular">
                 <?php if ($products) {?>
                     <?php foreach ($products as $product) {?>
-                        <div class="col-md-4 item-grid1 simpleCart_shelfItem">
+                        <div class="col-md-4 item-grid1 catalog-item-grid simpleCart_shelfItem">
                             <div class=" mid-pop">
                                 <div class="pro-img">
 
@@ -32,7 +33,7 @@ $this->title = $category->name;
                                     <div class="women">
                                         <div class="women-top">
                                             <span><?=$product->getMainCategoryName()?></span>
-                                            <h6><a href="single.html"><?=$product->name?></a></h6>
+                                            <h6 class="item-header"><a href="single.html"><?=$product->name?></a></h6>
                                         </div>
                                         <div class="img item_add">
                                             <a href="#"><img src="/images/ca.png" alt=""></a>
@@ -52,6 +53,8 @@ $this->title = $category->name;
                             </div>
                         </div>
                         <?php } ?>
+                    <div class="clearfix"></div>
+                    <?=LinkPager::widget(['pagination' => $pages])?>
                 <?php } ?>
                 <div class="clearfix"></div>
             </div>
