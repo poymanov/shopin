@@ -3,6 +3,7 @@
 use common\widgets\Categories\Categories;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+use frontend\widgets\CategoriesFilter\CategoriesFilter;
 
 $this->title = $category->name;
 
@@ -64,45 +65,17 @@ $this->title = $category->name;
             <div class=" rsidebar span_1_of_left">
                 <?=Categories::widget()?>
             </div>
-
-            <?php if ($discounts) {?>
-                <section  class="sky-form">
-                    <h4 class="cate">Discounts</h4>
-                    <div class="row row-sky-form scroll-pane">
-                        <div class="col col-4">
-                            <?php foreach ($discounts as $discount) {?>
-                                <label class="checkbox"><input type="checkbox" name="discounts"><i></i><?=$discount->name?></label>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </section>
-            <?php } ?>
-
-            <?php if ($types) {?>
-                <section  class="sky-form">
-                    <h4 class="cate">Type</h4>
-                    <div class="row row-sky-form scroll-pane">
-                        <div class="col col-4">
-                            <?php foreach ($types as $type) {?>
-                                <label class="checkbox"><input type="checkbox" name="types"><i></i><?=$type->name?></label>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </section>
-            <?php } ?>
-
-            <?php if ($brands) {?>
-                <section  class="sky-form">
-                    <h4 class="cate">Brand</h4>
-                    <div class="row row-sky-form scroll-pane">
-                        <div class="col col-4">
-                            <?php foreach ($brands as $brand) {?>
-                                <label class="checkbox"><input type="checkbox" name="brands"><i></i><?=$brand->name?></label>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </section>
-            <?php } ?>
+            
+            <!-- filters -->
+            <?=CategoriesFilter::widget(
+                [
+                    'category' => $category,
+                    'typesWhere' => $typesWhere,
+                    'brandsWhere' => $brandsWhere,
+                    'discountsWhere' => $discountsWhere,
+                ]
+            );?>
+            
         </div>
         <div class="clearfix">
     </div>

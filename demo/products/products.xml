@@ -104,7 +104,7 @@
         <status>1</status>
         <discount>30% - 20%</discount>
         <type>Shirts</type>
-        <brand>New Balance</brand>
+        <brand>Persol</brand>
         <images>
             <image>
                 <name>Image #01</name>
@@ -630,8 +630,8 @@
         <preview_text>preview</preview_text>
         <full_description>description</full_description>
         <status>1</status>
-        <discount>30% - 20%</discount>
-        <type>Shirts</type>
+        <discount>Others</discount>
+        <type>Sunglasses</type>
         <brand>New Balance</brand>
         <images>
             <image>
@@ -678,7 +678,7 @@
         <preview_text>preview</preview_text>
         <full_description>description</full_description>
         <status>1</status>
-        <discount>30% - 20%</discount>
+        <discount>Upto - 10%</discount>
         <type>Shirts</type>
         <brand>New Balance</brand>
         <images>
