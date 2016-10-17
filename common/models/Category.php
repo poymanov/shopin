@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use php_rutils\RUtils;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "categories".
@@ -65,6 +66,32 @@ class Category extends \yii\db\ActiveRecord
     public function getChildCategories()
     {
         return $this->hasMany(Category::className(), ['parent_id' => 'id']);
+    }
+
+    /**
+     * Получение данных таблицы ProductsCategories
+     */
+
+    public function getProducts()
+    {
+        return $this->hasMany(ProductsCategories::className(), ['category_id' => 'id']);
+    }
+
+    /**
+     * Получение списка товаров по категории
+     */
+
+    public function getAllProducts()
+    {
+        // Получение id всех товаров по категории
+        $productsCategory = $this->getProducts()->select(['product_id'])->asArray()->all();
+
+        // Преобразование результатов в более удобный массив для запроса
+        $productArray = ArrayHelper::getColumn($productsCategory, 'product_id');
+
+        $products = Product::find()->with('productImages', 'allCategories', 'allCategories.category')->where(['id' => $productArray])->all();
+
+        return $products;
     }
 
 }
