@@ -186,4 +186,12 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+     * Removes email confirmation token
+     */
+    public function removeEmailConfirmToken()
+    {
+        $this->email_confirm_token = null;
+    }
 }

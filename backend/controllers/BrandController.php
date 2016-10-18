@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use Imagine\Image;
+use yii\filters\AccessControl;
 
 /**
  * BrandController implements the CRUD actions for Brand model.
@@ -26,6 +27,15 @@ class BrandController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ]
                 ],
             ],
         ];
