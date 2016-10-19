@@ -34,6 +34,33 @@ class Category extends \yii\db\ActiveRecord
         }
     }
 
+    /**
+     * Удаление кэша виджета категорий после сохранения модели
+     * @param bool $insert
+     * @param array $changedAttributes
+     */
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+
+        // Обновление кэша для frontend-виджета
+        if (Yii::$app->cacheFrontend->exists('categories')) {
+            Yii::$app->cacheFrontend->delete('categories');
+        }
+
+    }
+
+    /**
+     * Удаление кэша виджета категорий после удаления модели
+     */
+    public function afterDelete()
+    {
+        parent::afterDelete();
+
+        // Обновление кэша для frontend-виджета
+        if (Yii::$app->cacheFrontend->exists('categories')) {
+            Yii::$app->cacheFrontend->delete('categories');
+        }
+    }
 
     /**
      * @inheritdoc
