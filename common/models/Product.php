@@ -276,7 +276,7 @@ class Product extends \yii\db\ActiveRecord
         $category = $this->getMainCategory();
 
         if ($category) {
-            return $category->category_id;
+            return $category->id;
         } else {
             return null;
         }

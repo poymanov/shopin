@@ -5,6 +5,7 @@
 
 use backend\assets\LteAsset;
 use yii\helpers\Html;
+use backend\widgets\BreadcrumbsCustom;
 
 LteAsset::register($this);
 ?>
@@ -41,10 +42,12 @@ LteAsset::register($this);
                     Dashboard
                     <small>Control panel</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
+
+                <?= BreadcrumbsCustom::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'tag' => 'ol',
+                ]) ?>
+                
             </section>
 
             <!-- Main content -->
