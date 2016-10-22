@@ -8,6 +8,10 @@ class MainMenu extends \yii\bootstrap\Widget
 {
     public function run()
     {
-        return $this->render('menu');
+        // Получаем список родительских категорий
+
+        $categories = Category::getParentsCategory();
+
+        return $this->render('menu', ['categories' => $categories]);
     }
 }

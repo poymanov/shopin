@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use common\widgets\Categories\Categories;
 use Yii;
 use php_rutils\RUtils;
 use yii\helpers\ArrayHelper;
@@ -128,5 +129,16 @@ class Category extends \yii\db\ActiveRecord
 
         return $products;
     }
+
+    /**
+     * Получение списка родительских категорий
+     * (категории, у которых не заполнено поле parent_id)
+     */
+
+    public static function getParentsCategory()
+    {
+        return Category::findAll(['parent_id' => null]);
+    }
+
 
 }
