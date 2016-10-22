@@ -7,6 +7,7 @@ use common\models\ProductDiscount;
 use common\models\ProductImage;
 use common\models\ProductsCategories;
 use common\models\ProductType;
+use common\models\User;
 use Yii;
 use yii\console\Controller;
 use common\models\Brand;
@@ -44,6 +45,9 @@ class DemoController extends Controller
 
         // Загрузка товаров
         $this->loadProducts();
+
+        // Загрузка пользователей
+        $this->loadUsers();
     }
 
     protected function loadBrands() 
@@ -680,6 +684,74 @@ class DemoController extends Controller
                 echo "Success!" . PHP_EOL;
             } else {
                 print_r($newProductBrand->errors);
+            }
+        }
+    }
+
+    protected function loadUsers()
+    {
+        echo "\n Load users data.\n";
+
+        $paths = $this->initPath('users');
+
+        // Получение CSV файла с данными
+        $path = $paths['path'];
+
+        // Проверка файла с демо данными
+        if (!$this->checkDemoDataFile($path)) {
+            exit(0);
+        }
+
+        // Получение содержимого xml-файла
+        $xml = simplexml_load_file($path);
+
+        // Если в файле нет данных
+        // прерываем выполнение загрузки
+        if (count($xml) == 0) {
+            echo "Can't load users data from file. Empty." . PHP_EOL;
+            exit(0);
+        }
+
+        // Удаление всех записей о брендах из таблицы
+        User::deleteAll();
+
+        // Запись данных о пользователях в БД
+        foreach ($xml->user as $user) {
+            print_r($user);
+
+            // Получение данных из xml
+            $username = (string) $user->username;
+            $password = (string) $user->password;
+            $email = (string) $user->email;
+
+            // Проверки перед записью
+
+            // Имя пользователя должно быть заполнено
+            if (!$this->validateData($username, 'Username', 'empty')) {
+                continue;
+            }
+
+            // Пароль пользователя должен быть заполнен
+            if (!$this->validateData($password, 'Password', 'empty')) {
+                continue;
+            }
+
+            // Почта пользователя должен быть заполнен
+            if (!$this->validateData($email, 'Email', 'empty')) {
+                continue;
+            }
+
+            // Запись значений в БД
+            $newUser = new User();
+            $newUser->username = $username;
+            $newUser->password = $password;
+            $newUser->email = $email;
+            $newUser->generateAuthKey();
+
+            if ($newUser->save()) {
+                echo "Success!" . PHP_EOL;
+            } else {
+                print_r($newUser->errors);
             }
         }
     }
