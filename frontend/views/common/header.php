@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use common\widgets\MainMenu\MainMenu;
+use yii\helpers\Html;
 
 ?>
 <!--header-->
@@ -82,7 +83,7 @@ use common\widgets\MainMenu\MainMenu;
             <div class="container">
                 <h1>Products</h1>
                 <em></em>
-                <h2><a href="<?=Url::home()?>">Home</a><label>/</label>Products</a></h2>
+                <h2><a href="<?=Url::home()?>">Home</a><label>/</label><?= Html::encode($this->title) ?></a></h2>
             </div>
         </div>
     <?php } ?>
