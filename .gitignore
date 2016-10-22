@@ -36,3 +36,6 @@ phpunit.phar
 backend/web/storage
 frontend/web/storage
 
+#npm modules
+node_modules
+
