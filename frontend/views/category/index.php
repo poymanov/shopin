@@ -42,7 +42,11 @@ $this->title = $category->name;
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="mid-2">
-                                        <p><em class="item_price">$<?=$product->price?></em></p>
+                                        <p>
+                                            <em class="item_price">
+                                                $<?=Yii::$app->formatter->asDecimal($product->price, 2)?>
+                                            </em>
+                                        </p>
                                         <div class="block">
                                             <div class="starbox small ghosting"> </div>
                                         </div>
