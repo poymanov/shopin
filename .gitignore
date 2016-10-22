@@ -39,3 +39,5 @@ frontend/web/storage
 #npm modules
 node_modules
 
+#build sources
+frontend/web/build
