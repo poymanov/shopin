@@ -9,7 +9,7 @@ use yii\helpers\Html;
 <div class="header">
     <div class="container">
         <div class="head">
-            <div class=" logo">
+            <div class="logo">
                 <a href="<?=Url::home()?>"><img src="/images/logo.png" alt=""></a>
             </div>
         </div>
