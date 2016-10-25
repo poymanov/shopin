@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <products>
     <product>
-        <name>Lee T-Shirt</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Camo Pocket T-Shirt</name>
+        <price>14</price>
+        <preview_text>100% Cotton<br/>Camo Pocket T-Shirt<br/>Model is 6'1" and wears UK size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/01/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/01/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/01/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/01/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -41,47 +41,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>T-shirts, Vests</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>John Players T-Shirt</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Splatter Panel Scoop Neck T-Shirt</name>
+        <price>20</price>
+        <preview_text></preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/02/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/02/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/02/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/02/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -89,47 +89,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>T-shirts, Vests</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Vans T-Shirt</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Basic Long Sleeve Crew Neck T Shirt</name>
+        <price>10</price>
+        <preview_text>100% Cotton<br/>Long Sleeve Crew Neck T Shirt<br/>Model is 6'1" and Wears UK Size Medium</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>Persol</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/03/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/03/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/03/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/03/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -137,47 +137,48 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>T-shirts, Vests</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Nike Modish T-Shirt</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Longline Loose Fit Cap Sleeve T Shirt</name>
+        <price>10</price>
+        <preview_text>100% Cotton. Centre Back to Hem: 81cm/31.75", Chest: 49cm/19", Arm Hole: 20cm/7.5". (Measured from UK Size M). Machine Washable. Model Wears UK Size M.
+        </preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/04/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/04/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/04/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/04/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -185,47 +186,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>T-shirts, Vests</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Jazzmyride Round Neck Half Sleeve T-Shirt-Romancing The Roads - Black</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Knitted Crew Neck Jumper With Patch Pocket</name>
+        <price>35</price>
+        <preview_text>50% Cotton, 50% Acrylic<br/>Knitted Crew Neck Jumper With Patch Pocket<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/05/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/05/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/05/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/05/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -233,47 +234,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Sweaters, Cardigans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Heavy Knit Mixed Colour Crew Neck Sweater</name>
+        <price>26</price>
+        <preview_text>100% Acrylic<br/>Heavy Knit Sweater<br/>Mixed Colour Effect<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/06/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/06/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/06/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/06/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -281,47 +282,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Sweaters, Cardigans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 2</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Snowflake Christmas Jumper</name>
+        <price>26</price>
+        <preview_text>100% Acrylic<br/>Snowflake Christmas Jumper<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/07/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/07/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/07/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/07/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -329,47 +330,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Sweaters, Cardigans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 3</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Heavy Knit Jumper With Elbow Patches</name>
+        <price>30</price>
+        <preview_text>100% Acrylic<br/>Heavy Sweater With Cord Elbow Patches<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/08/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/08/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/08/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/08/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -377,47 +378,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Sweaters, Cardigans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 4</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>MA1 Crew Sweater</name>
+        <price>20</price>
+        <preview_text>52% Cotton, 48% Polyester. Centre Back to Hem: 67cm/26", Chest: 53cm/20.75", Sleeve Length: 55cm/21.5", Bicep: 20cm/7.75". (Measured from UK Size M). Machine Washable. Model Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/09/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/09/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/09/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/09/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -425,47 +426,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Hoodies, sweats</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 5</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Basic Crew Neck Sweater</name>
+        <price>16</price>
+        <preview_text>Body: 50% Cotton 50% Polyester Rib: 52% Cotton 45% Polyester 3% Elastane <br/>3/4 Sleeve Rib T Shirt<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/10/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/10/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/10/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/10/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -473,47 +474,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Hoodies, sweats</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 6</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Zip Through Hoodie</name>
+        <price>26</price>
+        <preview_text>Blush</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/11/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/11/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/11/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/11/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -521,47 +522,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Hoodies, sweats</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 7</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Crew Neck Biker Sweater</name>
+        <price>30</price>
+        <preview_text>60% Cotton, 40% Polyester<br/>Crew Neck<br/>Biker Style Sweater<br/>With Zip Detailing<br/>Model is 6'1" and Wears UK Size M.</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/12/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/12/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/12/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/12/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -569,47 +570,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Hoodies, sweats</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 8</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Clay Wash Skinny Fit Jeans</name>
+        <price>35</price>
+        <preview_text>Taupe</preview_text>
+        <full_description></full_description>
         <status>1</status>
         <discount>30% - 20%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/13/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/13/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/13/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/13/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -617,47 +618,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Jeans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 9</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Skinny Fit Vintage Wash Rigid Jeans with Open Rips</name>
+        <price>44</price>
+        <preview_text>95% Cotton, 5% Polyester<br/>Skinny Fit Rigid Jeans<br/>Vintage Styling<br/>Front and Back Pockets<br/>With Open Rip Effect<br/>Model is 6'1" and Wears UK Size 32.</preview_text>
+        <full_description></full_description>
         <status>1</status>
-        <discount>Others</discount>
-        <type>Sunglasses</type>
-        <brand>New Balance</brand>
+        <discount>30% - 20%</discount>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/14/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/14/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/14/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/14/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -665,47 +666,47 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Jeans</name>
             </category>
         </categories>
     </product>
     <product>
-        <name>Prokyde Zidane 10 Tshirt 10</name>
-        <price>29</price>
-        <preview_text>preview</preview_text>
-        <full_description>description</full_description>
+        <name>Ripped Knee Skinny Jean</name>
+        <price>30</price>
+        <preview_text>96% Cotton, 4% Elastane. Total Length: 107cm/42", Inside Leg Length: 82cm/32", Waist: 41cm/16", Thigh: 22cm/8.5", Hem Width: 17cm/6.5". (Measured from UK Size 32R). Machine Washable. Model Wears UK Size 32R.</preview_text>
+        <full_description></full_description>
         <status>1</status>
-        <discount>Upto - 10%</discount>
-        <type>Shirts</type>
-        <brand>New Balance</brand>
+        <discount>30% - 20%</discount>
+        <type></type>
+        <brand></brand>
         <images>
             <image>
                 <name>Image #01</name>
-                <path>01/01.jpg</path>
+                <path>mens/15/01.jpg</path>
                 <title>Image #01</title>
                 <alt>Image #01</alt>
                 <main>1</main>
             </image>
             <image>
                 <name>Image #02</name>
-                <path>01/02.jpg</path>
+                <path>mens/15/02.jpg</path>
                 <title>Image #02</title>
                 <alt>Image #02</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #03</name>
-                <path>01/03.jpg</path>
+                <path>mens/15/03.jpg</path>
                 <title>Image #03</title>
                 <alt>Image #03</alt>
                 <main></main>
             </image>
             <image>
                 <name>Image #04</name>
-                <path>01/04.jpg</path>
+                <path>mens/15/04.jpg</path>
                 <title>Image #04</title>
                 <alt>Image #04</alt>
                 <main></main>
@@ -713,10 +714,442 @@
         </images>
         <categories>
             <category>
-                <name>Man</name>
+                <name>Mens</name>
             </category>
             <category>
-                <name>T-shirts</name>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Stone Washed Stretch Skinny Fit Jeans</name>
+        <price>26</price>
+        <preview_text>Taupe</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>30% - 20%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>mens/15/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>mens/15/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>mens/15/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>mens/15/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Mens</name>
+            </category>
+            <category>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Suzy Strappy Off Shoulder Midi Bodycon Dress</name>
+        <price>30</price>
+        <preview_text>95% Polyester, 5% Elastane. Flat Measurement of Garment: Shoulder to Hem 110cm/43", Bust 38cm/15", Waist 32cm/12.5, Hip 41cm/16". Machine Washable. Model Wears UK Size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Davisa Slinky Knot Detail Bodycon Dress</name>
+        <price>26</price>
+        <preview_text>95% Polyester, 5% Elastane. Flat Measurement of Garment: Shoulder To Hem 84cm/33", Bust 36cm/14", Waist 32cm/12.5", Hip 41cm/16". Machine Washable. Model Wears Size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/02/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/02/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/02/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/02/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Jelena Choker Cut Out Bandeau Midi Dress</name>
+        <price>30</price>
+        <preview_text>95% Polyester, 5% Elastane. Flat Measurement of Garment: Shoulder To Hem 110cm/43", Bust 38cm/15", Waist 32cm/12.5", Hip 41cm/16". Machine Washable. Model Wears Size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/03/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/03/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/03/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/03/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Dixie Bardot Layered Frill Detail Midi Dress</name>
+        <price>30</price>
+        <preview_text>95% Polyester 5% Elastane. Flat Measurement of Garment: Shoulder To Hem 110cm/43", Bust 36cm/15". Machine Washable. Model Wears UK Size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/04/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/04/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/04/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/04/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Ella Textured Full Sleeve Crop</name>
+        <price>24</price>
+        <preview_text>Machine Washable. 100% Polyester. Flat Measurement of Garment Not Worn. Total Length 45cm/17.5". Measured On UK Size 10. Model wears size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/05/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/05/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/05/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/05/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Mila Bow Sleeve Bardot Top</name>
+        <price>20</price>
+        <preview_text>Machine Washable. 100% Polyester. Flat Measurement of Garment Not Worn. Total Length 45cm/17.5". Measured On UK Size 10. Model wears size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/06/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/06/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/06/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/06/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Hazel Crepe Knot Top</name>
+        <price>24</price>
+        <preview_text></preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/07/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/07/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/07/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/07/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Eleanor Ruched Cold Shoulder T-shirt</name>
+        <price>20</price>
+        <preview_text></preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/08/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/08/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/08/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/08/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Tops</name>
             </category>
         </categories>
     </product>

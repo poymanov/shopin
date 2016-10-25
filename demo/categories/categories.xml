@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <categories>
     <category>
-        <name>Man</name>
+        <name>Mens</name>
         <subcategories>
-            <category>T-shirts</category>
+            <category>T-shirts, Vests</category>
+            <category>Sweaters, Cardigans</category>
+            <category>Hoodies, sweats</category>
             <category>Jeans</category>
         </subcategories>
     </category>
     <category>
-        <name>Woman</name>
+        <name>Womens</name>
         <subcategories>
-            <category>Woman subcategory</category>
+            <category>Dresses</category>
+            <category>Tops</category>
         </subcategories>
     </category>
     <category>
         <name>Kids</name>
         <subcategories>
             <category>Kids subcategory</category>
-        </subcategories>
-    </category>
-    <category>
-        <name>Accessories</name>
-        <subcategories>
-            <category>Accessories subcategory</category>
-        </subcategories>
-    </category>
-    <category>
-        <name>Shoes</name>
-        <subcategories>
-            <category>Shoes subcategory</category>
         </subcategories>
     </category>
 </categories>
