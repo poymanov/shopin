@@ -217,10 +217,10 @@ class DemoController extends Controller
                 // При успешном сохранении родительской категории
                 // находим и записываем все дочерние категории
 
-                foreach ($category->subcategories as $subcategory) {
+                foreach ($category->subcategories->category as $subcategory) {
 
                     // Получение данных из xml
-                    $nameSubcategory = (string) $subcategory->category;
+                    $nameSubcategory = (string) $subcategory;
 
                     // Проверки перед записью в БД
                     // Наименование категории должно быть заполнено
