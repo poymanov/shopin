@@ -1153,4 +1153,1135 @@
             </category>
         </categories>
     </product>
+    <product>
+        <name>Eva Merry Christmas Ya Filthy Animal Jumper</name>
+        <price>26</price>
+        <preview_text></preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/09/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/09/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/09/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/09/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Knitwear</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Plus Becca Side Split Moss Stitch Tunic Jumper</name>
+        <price>30</price>
+        <preview_text>Toffee</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/10/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/10/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/10/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/10/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Knitwear</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Eloise Roll Sleeve Knitted Dress</name>
+        <price>26</price>
+        <preview_text></preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/11/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/11/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/11/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/11/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Knitwear</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Harper Heart Elbow Patch Jumper</name>
+        <price>30</price>
+        <preview_text>Plum</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/12/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/12/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/12/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/12/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Knitwear</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Avah High Rise Disco Jeans</name>
+        <price>44</price>
+        <preview_text>Blush</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/13/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/13/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/13/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/13/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Jessie Mid Rise Distressed Ankle Skinny Jeans</name>
+        <price>44</price>
+        <preview_text>Heel Height: 3cm/1.2", Total Height: 18cm/7.3". Ankle Circumference: 23cm/9". Upper: Synthetic Materials. Lining And Sock: Other Materials. Outer: Other Materials.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/14/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/14/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/14/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/14/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Helen High Rise Tube Jeans</name>
+        <price>35</price>
+        <preview_text>Fabric:95% Polyester,5% Elastane. Flat Measurement Total Length 97cm/38" Waist:36cm/14" Measured on a UK Size 10.Machine Washable.Model Wears UK Size 10.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/15/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>womens/15/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>womens/15/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>womens/15/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Cara 70's Wash Knee Rip Mom Jeans</name>
+        <price>44</price>
+        <preview_text>Fabric:100% Cotton.Flat measurement.Total Length 97cm/38',Inside Leg 69cm/27',Waist 37cm/14.5',Machine Wash.(Models Wears UK Size 8),Measured on UK Size 8.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount>40% - 50%</discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>womens/16/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Womens</name>
+            </category>
+            <category>
+                <name>Jeans</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys NYC Sweat Top</name>
+        <price>20</price>
+        <preview_text>Fabric:95% polyester 5% elastane. Flat measurement total length:56.5cm/22.5" chest:39cm/15.5" Back neck width:17.5cm/7" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/01/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/01/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/01/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/01/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Star Print Tee</name>
+        <price>14</price>
+        <preview_text>Fabric:95% viscose 5% elastane.Flat Measurement:Total Length 44cm/17.5" chest 37cm/14.5" neck width 17cm/6.5" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/02/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/02/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/02/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/02/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Longline Round Neck Tee</name>
+        <price>8</price>
+        <preview_text>Fabric:95% viscose,5% elastane.Flat measurement total length:64cm/32.5" chest:44cm/15" BNW:18cm/7" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away frm fire</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/03/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/03/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/03/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/03/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Striped New York City T Shirt</name>
+        <price>10</price>
+        <preview_text>Fabric:95% viscose 5% elastane.Total length:53cm/21" neck width:18cm/7" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/04/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/04/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/04/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/04/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Space Dye Bomber Jacket</name>
+        <price>20</price>
+        <preview_text>Flat Measurement:Total length 49cm/19" chest 48cm/19" neck width 17cm/7"Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/05/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/05/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/05/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/05/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Faux Fur Hooded Padded Winter Coat</name>
+        <price>44</price>
+        <preview_text>Fabric Shell:100% polyester.Flat Measurement:Total Length 59cm/23" chest 45cm/17.5" back neck width 22cm/8.5" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/06/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/06/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/06/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/06/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Padded Coat With Faux Fur Hood</name>
+        <price>40</price>
+        <preview_text>Fabric:100% polyester.Total length:56cm/22" back neck width:21cm/8.5" chest:40cm/16" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/07/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/07/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/07/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/07/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Boys Smart Bomber Jacket</name>
+        <price>20</price>
+        <preview_text>Fabric:60% Cotton, 40% Polyester. Flat Measurement: Total Length 56cm/22". Neck Width 15cm/6". Arm Sleeve Length 52cm/20.5". Machine Washable. Measured on a UK Aged 7-8. Model Wears UK Aged 7-8.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/08/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/08/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/08/03.jpg</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/08/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Checked Top, Skirt Set</name>
+        <price>20</price>
+        <preview_text>Fabric:95% viscose 5% elastane.Total length of top:42cm/16.5"chest:35cm/15"BNW:19cm/7.5".Skirt length:50cm/19.7"waist:28cm/11"Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fir</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/09/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/09/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/09/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/09/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Checked Top, Leggings Set</name>
+        <price>20</price>
+        <preview_text>Fabric:95% viscose 5% elastane.Total length of top:42cm/16.5"chest:35cm/15" BNW:19cm/7.5".Legging length:67cm,waist:24cm/9.5"Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/10/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/10/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/10/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/10/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Star Print Top And Skirt Set</name>
+        <price>20</price>
+        <preview_text>Fabric:95%viscose,5%elastane.Top length:41cm/16"chest:36cm/14"BNW:17cm/6.5"Skirt length:55cm/21.5"Waist:26cm/10"Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Machine wash.Keep away from fire</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/11/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/11/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/11/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/11/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Snakeprint Top And Leggings Set</name>
+        <price>20</price>
+        <preview_text>Fabric:95% viscose,5% elastane.T.length at back:76cm/30"Chest:32cm/12.5"BNW:17cm/6.5"Legging length:73cm/28.7"Waist:26cm/10.5"Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fir</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/12/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/12/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/12/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/12/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Boys Tops</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls High Neck Ribbed Midi Dress</name>
+        <price>10</price>
+        <preview_text>Fabric:95% polyester 5% elastane.Flat Measurement:Total Length 72cm/28.5" chest 30cm/12" neck width 18cm/7" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/13/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/13/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/13/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/13/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Capped Sleeve Belted Ponte Skater Dress</name>
+        <price>16</price>
+        <preview_text>Fabric:95% polyester 5% elastane. Flat Measurement:Total Length 79cm/20" chest 32cm/12.5" neck width: 16cm/6.5" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/14/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/14/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/14/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/14/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Star Foil Hooded Sweat Dress</name>
+        <price>14</price>
+        <preview_text>Main fabric:60% cotton,40% polyster.Flat Measurement:Total Length 57cm/22.5" chest 39cm/15.5" neck width:20cm/8" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8. Keep away from fire</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/15/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/15/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/15/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/15/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
+    <product>
+        <name>Girls Leopard Print Belted Skater Dress</name>
+        <price>20</price>
+        <preview_text>Fabric:95 polyester 5% elastane.Total length:67cm/26.5"neck width:20cm/8" Measured on a UK age 7-8/Height range 122cm-128cm.Machine Wash.Model Wears UK age 7-8.Keep away from fire.</preview_text>
+        <full_description></full_description>
+        <status>1</status>
+        <discount></discount>
+        <type></type>
+        <brand></brand>
+        <images>
+            <image>
+                <name>Image #01</name>
+                <path>kids/16/01.jpg</path>
+                <title>Image #01</title>
+                <alt>Image #01</alt>
+                <main>1</main>
+            </image>
+            <image>
+                <name>Image #02</name>
+                <path>kids/16/02.jpg</path>
+                <title>Image #02</title>
+                <alt>Image #02</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #03</name>
+                <path>kids/16/03.png</path>
+                <title>Image #03</title>
+                <alt>Image #03</alt>
+                <main></main>
+            </image>
+            <image>
+                <name>Image #04</name>
+                <path>kids/16/04.jpg</path>
+                <title>Image #04</title>
+                <alt>Image #04</alt>
+                <main></main>
+            </image>
+        </images>
+        <categories>
+            <category>
+                <name>Kids</name>
+            </category>
+            <category>
+                <name>Dresses</name>
+            </category>
+        </categories>
+    </product>
 </products>

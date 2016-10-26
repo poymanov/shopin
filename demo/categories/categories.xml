@@ -14,12 +14,17 @@
         <subcategories>
             <category>Dresses</category>
             <category>Tops</category>
+            <category>Knitwear</category>
+            <category>Jeans</category>
         </subcategories>
     </category>
     <category>
         <name>Kids</name>
         <subcategories>
-            <category>Kids subcategory</category>
+            <category>Boys Tops</category>
+            <category>Boys Coats, Jackets</category>
+            <category>Girls Sets</category>
+            <category>Dresses</category>
         </subcategories>
     </category>
 </categories>
