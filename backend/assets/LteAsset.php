@@ -34,13 +34,13 @@ class LteAsset extends AssetBundle
         'admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
         'admin/plugins/knob/jquery.knob.js',
         //'admin/plugins/daterangepicker/moment.min.js',
-        'admin/plugins/daterangepicker/daterangepicker.js',
-        'admin/plugins/datepicker/bootstrap-datepicker.js',
+        //'admin/plugins/daterangepicker/daterangepicker.js',
+        //'admin/plugins/datepicker/bootstrap-datepicker.js',
         'admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
         'admin/plugins/slimScroll/jquery.slimscroll.min.js',
         'admin/plugins/fastclick/fastclick.js',
         'admin/dist/js/app.min.js',
-        'admin/dist/js/pages/dashboard.js',
+        //'admin/dist/js/pages/dashboard.js',
         'admin/dist/js/demo.js',
         'admin/plugins/iCheck/icheck.min.js'
     ];

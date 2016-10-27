@@ -79,6 +79,9 @@ $user = \Yii::$app->user->identity;
                         <a href="<?=Url::to(['/category']);?>">Categories</a>
                     </li>
                     <li>
+                        <a href="<?=Url::to(['/product-option']);?>">Options</a>
+                    </li>
+                    <li>
                         <a href="<?=Url::to(['/product-brand']);?>">Products Brands</a>
                     </li>
                     <li>
