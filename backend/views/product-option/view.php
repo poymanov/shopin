@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\ProductOption */
@@ -25,13 +26,33 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'name',
-            'sort',
-        ],
-    ]) ?>
+    <?php
+
+        // Вывод данных опции
+        echo DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                'id',
+                'name',
+                'sort',
+            ],
+        ]);
+
+        echo Html::tag('h3', 'Option values');
+
+        // Вывод значений опции
+        echo GridView::widget([
+            'dataProvider' => $dataProvider,
+            'layout' => '{items}',
+            'options' => ['class' => 'grid-view row col-md-4'],
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                'name',
+            ],
+        ]);
+
+    ?>
+
+
 
 </div>

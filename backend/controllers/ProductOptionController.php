@@ -52,8 +52,19 @@ class ProductOptionController extends Controller
      */
     public function actionView($id)
     {
+
+        $model = $this->findModel($id);
+
+        // Получаем запрос для вывода значений опции
+        $values = $model->getValues();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $values,
+        ]);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'dataProvider' => $dataProvider
         ]);
     }
 
