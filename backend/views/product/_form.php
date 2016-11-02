@@ -99,8 +99,14 @@ use yii\grid\GridView;
                                     $selectItems = ArrayHelper::merge($selectItems, ArrayHelper::map($options, 'id', 'name'));
 
                                     // Формируем форму для выбора опций для товара
-                                    echo Html::dropDownList('option', '', $selectItems, ['class' => 'form-control product-form-options-option']);
-                                    echo Html::dropDownList('value', '', [], ['class' => 'form-control product-form-options-value']);
+                                    echo "<div class='row'>";
+                                        echo "<div class='col-md-4 select-list'>";
+                                            echo Html::dropDownList('option', '', $selectItems, ['class' => 'form-control product-form-options-option']);
+                                        echo "</div>";
+                                        echo "<div class='col-md-4 select-list'>";
+                                            echo Html::dropDownList('value', '', [], ['class' => 'form-control product-form-options-value']);
+                                        echo "</div>";
+                                    echo "</div>";
 
                                     Pjax::begin(['enablePushState' => false]);
 
@@ -126,7 +132,7 @@ use yii\grid\GridView;
                                                     'urlCreator' => function ($action, $model, $key, $index) {
                                                         if ($action === 'delete') {
                                                             return Url::to([
-                                                                'delete-value',
+                                                                '/product/delete-product-value',
                                                                 'product_id' => $model->product_id,
                                                                 'option_id' => $model->option_id,
                                                                 'value_id' => $model->value_id,
@@ -230,5 +236,14 @@ use yii\grid\GridView;
 JS;
     //маркер конца строки, обязательно сразу, без пробелов и табуляции
     $this->registerJs($script, yii\web\View::POS_READY);
+    $this->registerCss('
+        .select-list {
+            margin-bottom: 25px;
+        }
+        
+        .btn-add-value {
+            margin-bottom: 25px;
+        }
+    ');
 
 ?>
