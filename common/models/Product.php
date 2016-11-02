@@ -349,4 +349,12 @@ class Product extends \yii\db\ActiveRecord
     {
         return $this->hasOne(ProductBrand::className(), ['id' => 'brand_id']);
     }
+
+    /*
+     * Функция получает список опций и значений товара
+     */
+    public function getValues()
+    {
+        return $this->hasMany(ProductValue::className(), ['product_id' => 'id']);
+    }
 }

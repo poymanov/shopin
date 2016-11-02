@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\models\ProductOptionValue;
+use yii\helpers\ArrayHelper;
 
 /**
  * ProductOptionController implements the CRUD actions for ProductOption model.
@@ -179,5 +180,24 @@ class ProductOptionController extends Controller
         // Возвращаем значения в представление
         return $this->render('update', ['model' => $model, 'values' => $values]);
 
+    }
+
+    public function actionGetOptionValues()
+    {
+        // Проверка: это только ajax-запрос
+        if (!Yii::$app->request->isAjax) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        // Получаем пришедные параметры
+        $option_id = Yii::$app->request->get('option_id');
+
+        $values = ProductOptionValue::find()->where(['option_id' => $option_id])->asArray()->all();
+
+        // Преобразуем массив в более удобное представление
+        $values = ArrayHelper::map($values, 'id', 'name');
+
+        // Преобразуем массив в json и возвращаем обратно
+        return json_encode($values);
     }
 }
